@@ -15,7 +15,6 @@ xmodmap "/home/tom/.Xmodmap"
 # wmsmixer -w &
 # idesk &
 xrdb ~/.Xresources
-/usr/bin/conky -c ~/.conkyrc/conkyrc &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
