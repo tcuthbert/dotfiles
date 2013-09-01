@@ -71,7 +71,7 @@ set expandtab
                   " allow backspacing over everything in insert mode
 "set autoindent    " always set autoindenting on
 set smartindent    " always set smartindent on
-set copyindent    " copy the previous indentation on autoindenting
+"set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
 set shiftwidth=3  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
@@ -234,7 +234,7 @@ nmap <Leader>e :VimFiler<CR>
 
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType cpp nmap <Leader>b :silent Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
+autocmd FileType cpp nmap <Leader>b :Make! -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
 autocmd FileType cpp nmap <Leader>R :silent Dispatch ./%:r<cr>
 autocmd FileType python nmap <Leader>R :silent Dispatch python %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
