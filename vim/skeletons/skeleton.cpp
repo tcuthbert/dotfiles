@@ -7,7 +7,4 @@
  *     Revision: 0.1 - TC - Initial Draft
  */
 
-
 #include <iostream>
-
-

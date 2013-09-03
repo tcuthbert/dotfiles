@@ -67,10 +67,12 @@ set guioptions-=T " turn off toolbar
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start
+set nocompatible
 set expandtab
                   " allow backspacing over everything in insert mode
 "set autoindent    " always set autoindenting on
-set smartindent    " always set smartindent on
+set cindent
+"set smartindent    " always set smartindent on
 "set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
 set shiftwidth=3  " number of spaces to use for autoindenting
@@ -234,7 +236,9 @@ nmap <Leader>e :VimFiler<CR>
 
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType cpp nmap <Leader>b :Make! -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
+autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
 autocmd FileType cpp nmap <Leader>R :silent Dispatch ./%:r<cr>
+" Needed to fix auto-pairs indenting issues
+autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
 autocmd FileType python nmap <Leader>R :silent Dispatch python %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>

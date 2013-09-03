@@ -1,2 +1,4 @@
+testC:
+	gcc -g -Wall -Werror -o $(OUT) $(IN) 
 testCpp:
-	g++ -g -o $(OUT) $(IN) -Wall -Werror
+	g++ -g -Wall -Werror -o $(OUT) $(IN) 
