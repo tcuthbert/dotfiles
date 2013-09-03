@@ -71,8 +71,8 @@ set nocompatible
 set expandtab
                   " allow backspacing over everything in insert mode
 "set autoindent    " always set autoindenting on
-set cindent
-"set smartindent    " always set smartindent on
+"set cindent
+set smartindent    " always set smartindent on
 "set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
 set shiftwidth=3  " number of spaces to use for autoindenting
