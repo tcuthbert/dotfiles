@@ -19,7 +19,7 @@ OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
 OnLeftGrip Move1 :StartResizing bottomleft
 OnRightGrip Move1 :StartResizing bottomright
 
-Mod1 d :ForEach { Minimize } { Matches (Class!=Conky) }
+#Mod1 d :ForEach { Minimize } { Matches (Class!=Conky) }
 
 # open the window menu
 Mod1 space :WindowMenu
