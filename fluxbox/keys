@@ -19,74 +19,7 @@ OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
 OnLeftGrip Move1 :StartResizing bottomleft
 OnRightGrip Move1 :StartResizing bottomright
 
-# alt + middle click to lower the window
-OnWindow Mod1 Mouse2 :Lower
-
-# control-click a window's titlebar and drag to attach windows
-OnTitlebar Control Mouse1 :StartTabbing
-
-# double click on the titlebar to shade
-OnTitlebar Double Mouse1 :Shade
-
-# left click on the titlebar to move the window
-OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
-OnTitlebar Move1  :StartMoving
-
-# middle click on the titlebar to lower
-OnTitlebar Mouse2 :Lower
-
-# right click on the titlebar for a menu of options
-OnTitlebar Mouse3 :WindowMenu
-
-# alt-tab
-Mod1 Tab :NextWindow {groups} (workspace=[current])
-Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
-
-# cycle through tabs in the current window
-Mod4 Tab :NextTab
-Mod4 Shift Tab :PrevTab
-
-# go to a specific tab in the current window
-Mod4 1 :Tab 1
-Mod4 2 :Tab 2
-Mod4 3 :Tab 3
-Mod4 4 :Tab 4
-Mod4 5 :Tab 5
-Mod4 6 :Tab 6
-Mod4 7 :Tab 7
-Mod4 8 :Tab 8
-Mod4 9 :Tab 9
-
-# open a terminal
-Mod1 F1 :Exec urxvt
-
-# open a dialog to run programs
-Mod1 F2 :Exec fbrun
-
-#open gvim
-Mod1 g :ExecCommand gvim
-
-# volume settings, using common keycodes
-# if these don't work, use xev to find out your real keycodes
-176 :Exec amixer sset Master,0 1+
-174 :Exec amixer sset Master,0 1-
-160 :Exec amixer sset Master,0 toggle
-
-# current window commands
-Mod1 F4 :Close
-Mod1 F5 :Kill
-Mod1 F9 :Minimize
-Mod1 F10 :Maximize
-Mod1 F11 :Fullscreen
-Mod1 1 :MacroCmd {MoveTo 0 0 } { ResizeTo 50% 100% } 
-Mod1 2 :MacroCmd {MoveTo 50% 0 } { ResizeTo 50% 100% }
-Mod1 3 :MacroCmd {MoveTo 0 0 }  { ResizeTo 50% 50% } 
-Mod1 4 :MacroCmd {MoveTo 50% 0 }  { ResizeTo 50% 50% } 
-Mod1 5 :MacroCmd {MoveTo 0 50% } { ResizeTo 50% 50% }
-Mod1 6 :MacroCmd {MoveTo 50% 50% } { ResizeTo 50% 50% }
-
-# show desktop
-Control Mod2 d :ForEach { Minimize } { Matches (Class!=Conky) }
+Mod1 d :ForEach { Minimize } { Matches (Class!=Conky) }
 
 # open the window menu
 Mod1 space :WindowMenu
