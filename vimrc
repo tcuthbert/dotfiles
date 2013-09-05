@@ -24,6 +24,7 @@
  Bundle 'scrooloose/syntastic'
  Bundle 'scrooloose/nerdtree'
  Bundle 'kien/ctrlp.vim'
+ Bundle 'mbbill/undotree'
  Bundle 'flazz/vim-colorschemes'
  Bundle 'c9s/perlomni.vim'
  Bundle 'jiangmiao/auto-pairs'
@@ -39,7 +40,7 @@
  Bundle 'Shougo/vimproc'
  Bundle 'Shougo/vimfiler.vim'
  Bundle 'Rip-Rip/clang_complete'
- "Bundle 'Shougo/neosnippet'
+ Bundle 'Shougo/neosnippet'
  Bundle 'Shougo/unite.vim'
  Bundle 'Shougo/vimshell.vim'
 
@@ -246,3 +247,6 @@ autocmd FileType cpp nmap <Leader>R :silent Dispatch ./%:r<cr>
 autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
 autocmd FileType python nmap <Leader>R :silent Dispatch python %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
+
+" Dirty Hacks
+call yankstack#setup()
