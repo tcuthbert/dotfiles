@@ -30,6 +30,7 @@
  Bundle 'thinca/vim-ref'
  Bundle 'majutsushi/tagbar'
  Bundle 'ivanov/vim-ipython'
+ Bundle 'maxbrunsfeld/vim-yankstack'
  Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
