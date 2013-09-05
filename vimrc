@@ -40,6 +40,7 @@
  Bundle 'Rip-Rip/clang_complete'
  "Bundle 'Shougo/neosnippet'
  Bundle 'Shougo/unite.vim'
+ Bundle 'Shougo/vimshell.vim'
 
  "Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
@@ -227,8 +228,10 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
 
+" Custom Key Mappings
 "nmap ,b :CtrlPBuffer<CR>
 nmap ,b :Unite buffer<CR>
+nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
 "nmap <Leader>e :NERDTreeToggle<CR>
