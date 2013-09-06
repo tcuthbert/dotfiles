@@ -174,7 +174,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
@@ -206,9 +206,14 @@ let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
 "let g:clang_use_library = 1
 
+" Enable jedi completion
+let g:pymode_rope_vim_completion = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 0
+let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
+
 " end of neocomplete configuration
 
-let g:jedi#auto_vim_configuration = 0
 let g:vimfiler_as_default_explorer = 1
 "let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
@@ -245,7 +250,8 @@ autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT
 autocmd FileType cpp nmap <Leader>R :silent Dispatch ./%:r<cr>
 " Needed to fix auto-pairs indenting issues
 autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
-autocmd FileType python nmap <Leader>R :silent Dispatch python %<cr>
+autocmd FileType python nmap <Leader>R :Dispatch! python %<cr>
+autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
