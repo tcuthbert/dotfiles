@@ -257,7 +257,7 @@ call yankstack#setup()
 
 " Fix C++ indenting
 set cino=i-s
-autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
+"autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
 autocmd FileType cpp inoremap {      {}<Left>
 autocmd FileType cpp inoremap {<CR>  {<CR>}<Esc>O
 autocmd FileType cpp inoremap {{     {
