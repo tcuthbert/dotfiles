@@ -73,7 +73,7 @@ set backspace=indent,eol,start
 set nocompatible
 set expandtab
                   " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
+"set autoindent    " always set autoindenting on
 "set cindent
 set smartindent    " always set smartindent on
 "set copyindent    " copy the previous indentation on autoindenting
@@ -257,4 +257,8 @@ call yankstack#setup()
 
 " Fix C++ indenting
 set cino=i-s
-"autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
+autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
+autocmd FileType cpp inoremap {      {}<Left>
+autocmd FileType cpp inoremap {<CR>  {<CR>}<Esc>O
+autocmd FileType cpp inoremap {{     {
+autocmd FileType cpp inoremap {}     {}
