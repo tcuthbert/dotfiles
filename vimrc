@@ -73,7 +73,7 @@ set backspace=indent,eol,start
 set nocompatible
 set expandtab
                   " allow backspacing over everything in insert mode
-"set autoindent    " always set autoindenting on
+set autoindent    " always set autoindenting on
 "set cindent
 set smartindent    " always set smartindent on
 "set copyindent    " copy the previous indentation on autoindenting
@@ -248,11 +248,13 @@ autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
 autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
 autocmd FileType cpp nmap <Leader>R :silent Dispatch ./%:r<cr>
-" Needed to fix auto-pairs indenting issues
-autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
 autocmd FileType python nmap <Leader>R :Dispatch! python %<cr>
 autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
 call yankstack#setup()
+
+" Fix C++ indenting
+set cino=i-s
+"autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
