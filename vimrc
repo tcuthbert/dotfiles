@@ -247,7 +247,7 @@ nmap <Leader>e :VimFiler<CR>
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
 autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
-autocmd FileType cpp nmap <Leader>R :silent Dispatch ./%:r<cr>
+autocmd FileType cpp nmap <Leader>R :Dispatch ./%:r<cr>
 autocmd FileType python nmap <Leader>R :Dispatch! python %<cr>
 autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>

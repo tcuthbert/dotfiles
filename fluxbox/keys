@@ -86,7 +86,7 @@ Mod1 5 :MacroCmd {MoveTo 0 50% } { ResizeTo 50% 50% }
 Mod1 6 :MacroCmd {MoveTo 50% 50% } { ResizeTo 50% 50% }
 
 # show desktop
-Control Mod2 d :ForEach { Minimize } { Matches (Class!=Conky) }
+#Control Mod2 d :ForEach { Minimize } { Matches (Class!=Conky) }
 
 # open the window menu
 Mod1 space :WindowMenu
