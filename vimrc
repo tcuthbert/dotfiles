@@ -40,13 +40,13 @@
  Bundle 'Shougo/vimproc'
  Bundle 'Shougo/vimfiler.vim'
  Bundle 'Rip-Rip/clang_complete'
- Bundle 'Shougo/neosnippet'
  Bundle 'Shougo/unite.vim'
  Bundle 'Shougo/vimshell.vim'
 
  "Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
  Bundle 'vim-scripts/EasyGrep'
+ Bundle 'vim-scripts/grep.vim'
  " non github repos
 
  " git repos on your local machine (ie. when working on your own plugin)
