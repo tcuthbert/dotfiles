@@ -238,6 +238,7 @@ let g:pymode_breakpoint_key = "<Leader>pb"
 " Custom Key Mappings
 "nmap ,b :CtrlPBuffer<CR>
 nmap ,b :Unite buffer<CR>
+nmap ,f :Unite buffer<CR>
 nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
@@ -257,9 +258,9 @@ autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 call yankstack#setup()
 
 " Fix C++ indenting
-set cino=i-s
+"set cino=i-s
 "autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
-autocmd FileType cpp inoremap {      {}<Left>
-autocmd FileType cpp inoremap {<CR>  {<CR>}<Esc>O
-autocmd FileType cpp inoremap {{     {
-autocmd FileType cpp inoremap {}     {}
+autocmd FileType cpp,c inoremap {      {}<Left>
+autocmd FileType cpp,c inoremap {<CR>  {<CR>}<Esc>O
+autocmd FileType cpp,c inoremap {{     {
+autocmd FileType cpp,c inoremap {}     {}
