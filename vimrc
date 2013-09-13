@@ -238,7 +238,7 @@ let g:pymode_breakpoint_key = "<Leader>pb"
 " Custom Key Mappings
 "nmap ,b :CtrlPBuffer<CR>
 nmap ,b :Unite buffer<CR>
-nmap ,f :Unite fileCR>
+nmap ,f :Unite file<CR>
 nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
