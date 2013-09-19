@@ -36,7 +36,6 @@
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
  " Shougo plugins
- Bundle 'Shougo/neocomplete'
  Bundle 'Shougo/vimproc'
  Bundle 'Shougo/vimfiler.vim'
  Bundle 'Rip-Rip/clang_complete'
@@ -45,7 +44,6 @@
 
  "Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
- Bundle 'vim-scripts/EasyGrep'
  Bundle 'vim-scripts/grep.vim'
  " non github repos
 
