@@ -41,8 +41,7 @@
  Bundle 'Rip-Rip/clang_complete'
  Bundle 'Shougo/unite.vim'
  Bundle 'Shougo/vimshell.vim'
-
- "Bundle 'Shougo/neocomplete.vim'
+ Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
  Bundle 'vim-scripts/grep.vim'
  " non github repos
