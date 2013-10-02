@@ -11,6 +11,7 @@
  " My Bundles here:
  "
  " original repos on github
+ Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-dispatch'
  Bundle 'davidhalter/jedi-vim'
  "Bundle 'tomtom/templator_vim'
