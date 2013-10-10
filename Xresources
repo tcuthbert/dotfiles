@@ -107,6 +107,7 @@ URxvt*matcher.pattern.3:		\\bhttps?:\/\/[\\w-.]*\/[\\w./?&amp;@#-]*.(?i)(mp3|ogg
 URxvt*matcher.launcher.3:		urlLauncher -audio $0
 URxvt*matcher.pattern.4:		\\bhttps?:\/\/[\\w-.]*\/[\\w./?&amp;@#-]*.(?i)(jpg|jpeg|png)
 URxvt*matcher.launcher.4:		urlLauncher -image $0
+URxvt*loginShell: true
 
 !colors
 !black
