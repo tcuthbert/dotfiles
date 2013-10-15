@@ -1,6 +1,6 @@
 testC:
 	gcc -g -Wall -Werror -o $(OUT) $(IN) 
 testCpp:
-	g++ -g -Wall -Werror -o $(OUT) $(IN) 
+	g++ -g -Wall -Werror -o $(OUT) $(IN)
 testQt:
 	qmake && make

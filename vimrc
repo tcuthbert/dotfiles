@@ -94,6 +94,8 @@ set ofu=syntaxcomplete#Complete
 set foldmethod=syntax
 set foldlevelstart=1
 set t_Co=256
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
 
 syntax on
 colorscheme mustang
