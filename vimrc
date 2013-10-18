@@ -41,6 +41,7 @@
  Bundle 'Shougo/vimfiler.vim'
  Bundle 'Rip-Rip/clang_complete'
  Bundle 'Shougo/unite.vim'
+ Bundle 'Shougo/unite-ssh'
  Bundle 'Shougo/vimshell.vim'
  Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
