@@ -125,7 +125,7 @@ call s:AddITags(['a', 'abbr', 'acronym', 'address', 'b', 'bdo', 'big',
     \ 'label', 'legend', 'map', 'menu', 'noframes', 'noscript', 'object', 'ol',
     \ 'optgroup', 'q', 's', 'samp', 'select', 'small', 'span', 'strong', 'sub',
     \ 'sup', 'table', 'textarea', 'title', 'tt', 'u', 'ul', 'var', 'th', 'td',
-    \ 'tr', 'tfoot', 'thead', 'html', 'head', 'body'])
+    \ 'tr', 'tfoot', 'thead', 'html'])
 
 " tags added 2011 Sep 09 (especially HTML5 tags):
 call s:AddITags(['area', 'article', 'aside', 'audio', 'bdi', 'canvas',
