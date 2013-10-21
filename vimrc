@@ -33,9 +33,10 @@
  Bundle 'majutsushi/tagbar'
  Bundle 'ivanov/vim-ipython'
  Bundle 'maxbrunsfeld/vim-yankstack'
- Bundle 'joonty/vdebug'
+ "Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
+ Bundle 'amiorin/vim-project'
  " Shougo plugins
  Bundle 'Shougo/vimproc'
  Bundle 'Shougo/vimfiler.vim'

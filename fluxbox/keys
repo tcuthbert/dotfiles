@@ -65,6 +65,8 @@ Mod1 F2 :Exec fbrun
 
 #open gvim
 Mod1 g :ExecCommand gvim
+#open chromium
+Mod1 c :ExecCommand chromium
 
 # volume settings, using common keycodes
 # if these don't work, use xev to find out your real keycodes
