@@ -23,8 +23,7 @@
  "Bundle 'Valloric/YouCompleteMe'
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/syntastic'
- Bundle 'scrooloose/nerdtree'
- Bundle 'kien/ctrlp.vim'
+ "Bundle 'scrooloose/nerdtree'
  Bundle 'mbbill/undotree'
  Bundle 'flazz/vim-colorschemes'
  Bundle 'c9s/perlomni.vim'
@@ -32,11 +31,10 @@
  Bundle 'thinca/vim-ref'
  Bundle 'majutsushi/tagbar'
  Bundle 'ivanov/vim-ipython'
- Bundle 'maxbrunsfeld/vim-yankstack'
+ "Bundle 'maxbrunsfeld/vim-yankstack'
  "Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
- Bundle 'amiorin/vim-project'
  " Shougo plugins
  Bundle 'Shougo/vimproc'
  Bundle 'Shougo/vimfiler.vim'
@@ -257,7 +255,7 @@ autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
-call yankstack#setup()
+"call yankstack#setup()
 
 " Fix C++ indenting
 "set cino=i-s
