@@ -235,6 +235,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 "    \ }
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
+let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
 "nmap ,b :CtrlPBuffer<CR>
@@ -244,7 +245,7 @@ nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
 "nmap <Leader>e :NERDTreeToggle<CR>
-nmap <Leader>e :VimFiler<CR>
+nmap <Leader>e :VimFilerExplorer<CR>
 
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
