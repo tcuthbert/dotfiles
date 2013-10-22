@@ -14,6 +14,7 @@
  Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-dispatch'
  Bundle 'davidhalter/jedi-vim'
+ Bundle 'joonty/vdebug'
  "Bundle 'tomtom/templator_vim'
  "Bundle 'troydm/easybuffer.vim'
  Bundle 'tpope/vim-speeddating'
