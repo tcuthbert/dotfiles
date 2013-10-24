@@ -14,6 +14,7 @@
  Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-dispatch'
  Bundle 'davidhalter/jedi-vim'
+ Bundle 'joonty/vdebug'
  "Bundle 'tomtom/templator_vim'
  "Bundle 'troydm/easybuffer.vim'
  Bundle 'tpope/vim-speeddating'
@@ -23,8 +24,7 @@
  "Bundle 'Valloric/YouCompleteMe'
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'scrooloose/syntastic'
- Bundle 'scrooloose/nerdtree'
- Bundle 'kien/ctrlp.vim'
+ "Bundle 'scrooloose/nerdtree'
  Bundle 'mbbill/undotree'
  Bundle 'flazz/vim-colorschemes'
  Bundle 'c9s/perlomni.vim'
@@ -32,11 +32,10 @@
  Bundle 'thinca/vim-ref'
  Bundle 'majutsushi/tagbar'
  Bundle 'ivanov/vim-ipython'
- Bundle 'maxbrunsfeld/vim-yankstack'
+ "Bundle 'maxbrunsfeld/vim-yankstack'
  "Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
- Bundle 'amiorin/vim-project'
  " Shougo plugins
  Bundle 'Shougo/vimproc'
  Bundle 'Shougo/vimfiler.vim'
@@ -236,6 +235,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 "    \ }
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
+let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
 "nmap ,b :CtrlPBuffer<CR>
@@ -245,7 +245,7 @@ nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
 "nmap <Leader>e :NERDTreeToggle<CR>
-nmap <Leader>e :VimFiler<CR>
+nmap <Leader>e :VimFilerExplorer<CR>
 
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
@@ -257,7 +257,7 @@ autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
-call yankstack#setup()
+"call yankstack#setup()
 
 " Fix C++ indenting
 "set cino=i-s
