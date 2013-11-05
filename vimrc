@@ -12,6 +12,7 @@
  "
  " original repos on github
  Bundle 'vim-ruby/vim-ruby'
+ Bundle 'tpope/vim-rails'
  Bundle 'tpope/vim-dispatch'
  Bundle 'davidhalter/jedi-vim'
  Bundle 'joonty/vdebug'
@@ -214,7 +215,7 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 " end of neocomplete configuration
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 let g:vimfiler_as_default_explorer = 1
 "let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
