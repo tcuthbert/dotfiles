@@ -147,27 +147,6 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -180,9 +159,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
@@ -213,39 +189,26 @@ let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
 let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 
 " end of neocomplete configuration
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_use_bundler = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
 let g:vimfiler_as_default_explorer = 1
 "let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
-"let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_semantic_triggers =  {
-    "\   'c' : ['->', '.'],
-    "\   'objc' : ['->', '.'],
-    "\   'ocaml' : ['.', '#'],
-    "\   'cpp,objcpp' : ['->', '.', '::'],
-    "\   'perl' : ['->', '::'],
-    "\   'php' : ['->', '::'],
-    "\   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
-    "\   'ruby' : ['.', '::'],
-    "\   'lua' : ['.', ':'],
-    "\   'erlang' : [':'],
-"    \ }
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
 let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
-"nmap ,b :CtrlPBuffer<CR>
 nmap ,b :Unite buffer<CR>
 nmap ,f :Unite file<CR>
 nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
-"nmap <Leader>e :NERDTreeToggle<CR>
 nmap <Leader>e :VimFilerExplorer<CR>
 
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
