@@ -192,10 +192,12 @@ let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::\w*'
 let g:neocomplete#force_overwrite_completefunc = 1
 " end of neocomplete configuration
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+"autocmd FileType ruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
 autocmd FileType ruby,eruby let g:rubycomplete_use_bundler = 1
+
 let g:vimfiler_as_default_explorer = 1
 "let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
