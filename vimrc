@@ -11,6 +11,7 @@
  " My Bundles here:
  "
  " original repos on github
+ Bundle 'kchmck/vim-coffee-script'
  Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-rails'
  Bundle 'tpope/vim-dispatch'
