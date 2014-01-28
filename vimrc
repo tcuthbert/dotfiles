@@ -12,21 +12,19 @@
  "
  " original repos on github
  Bundle 'kchmck/vim-coffee-script'
+ Bundle 'kien/ctrlp.vim'
  Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-rails'
  Bundle 'tpope/vim-dispatch'
  Bundle 'davidhalter/jedi-vim'
  Bundle 'joonty/vdebug'
- "Bundle 'tomtom/templator_vim'
- "Bundle 'troydm/easybuffer.vim'
  Bundle 'tpope/vim-speeddating'
  Bundle 'tpope/vim-surround'
  Bundle 'SirVer/ultisnips'
  Bundle 'klen/python-mode'
- "Bundle 'Valloric/YouCompleteMe'
  Bundle 'scrooloose/nerdcommenter'
+ Bundle 'scrooloose/nerdtree'
  Bundle 'scrooloose/syntastic'
- "Bundle 'scrooloose/nerdtree'
  Bundle 'mbbill/undotree'
  Bundle 'flazz/vim-colorschemes'
  Bundle 'c9s/perlomni.vim'
@@ -34,17 +32,16 @@
  Bundle 'thinca/vim-ref'
  Bundle 'majutsushi/tagbar'
  Bundle 'ivanov/vim-ipython'
- "Bundle 'maxbrunsfeld/vim-yankstack'
- "Bundle 'joonty/vdebug'
+ Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
- " Shougo plugins
- Bundle 'Shougo/vimproc'
- Bundle 'Shougo/vimfiler.vim'
  Bundle 'Rip-Rip/clang_complete'
+ " Shougo plugins
+ "Bundle 'Shougo/vimproc'
+ Bundle 'Shougo/vimfiler.vim'
  Bundle 'Shougo/unite.vim'
- Bundle 'Shougo/unite-ssh'
- Bundle 'Shougo/vimshell.vim'
+ "Bundle 'Shougo/unite-ssh'
+ "Bundle 'Shougo/vimshell.vim'
  Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
  Bundle 'vim-scripts/grep.vim'
@@ -195,8 +192,6 @@ autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_use_bundler = 1
 
 let g:vimfiler_as_default_explorer = 1
 "let g:UltiSnipsExpandTrigger="<c-j>"
@@ -207,12 +202,13 @@ let g:pymode_breakpoint_key = "<Leader>pb"
 let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
-nmap ,b :Unite buffer<CR>
-nmap ,f :Unite file<CR>
-nmap <Leader>s :VimShellPop<CR>
+"nmap ,b :Unite buffer<CR>
+nmap ,b :CtrlPBuffer<CR>
+"nmap ,f :Unite file<CR>
+"nmap <Leader>s :VimShellPop<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
-nmap <Leader>e :VimFilerExplorer<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
 
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
@@ -227,8 +223,6 @@ autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 "call yankstack#setup()
 
 " Fix C++ indenting
-"set cino=i-s
-"autocmd FileType cpp inoremap { {<CR><CR>}<C-o>k<C-o>S }
 autocmd FileType cpp,c inoremap {      {}<Left>
 autocmd FileType cpp,c inoremap {<CR>  {<CR>}<Esc>O
 autocmd FileType cpp,c inoremap {{     {
