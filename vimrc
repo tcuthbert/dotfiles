@@ -12,6 +12,8 @@
  "
  " original repos on github
  Bundle 'kchmck/vim-coffee-script'
+ Bundle 'benmills/vimux'
+ Bundle 'rking/ag.vim'
  Bundle 'kien/ctrlp.vim'
  Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-rails'
