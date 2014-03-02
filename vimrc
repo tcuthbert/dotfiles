@@ -18,7 +18,7 @@
  Bundle 'vim-ruby/vim-ruby'
  Bundle 'tpope/vim-rails'
  Bundle 'tpope/vim-dispatch'
- Bundle 'davidhalter/jedi-vim'
+ "Bundle 'davidhalter/jedi-vim'
  Bundle 'joonty/vdebug'
  Bundle 'tpope/vim-speeddating'
  Bundle 'tpope/vim-surround'
@@ -37,14 +37,15 @@
  Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
- Bundle 'Rip-Rip/clang_complete'
+ Bundle 'Valloric/YouCompleteMe'
+ "Bundle 'Rip-Rip/clang_complete'
  " Shougo plugins
  "Bundle 'Shougo/vimproc'
- Bundle 'Shougo/vimfiler.vim'
- Bundle 'Shougo/unite.vim'
+ "Bundle 'Shougo/vimfiler.vim'
+ "Bundle 'Shougo/unite.vim'
  "Bundle 'Shougo/unite-ssh'
  "Bundle 'Shougo/vimshell.vim'
- Bundle 'Shougo/neocomplete.vim'
+ "Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
  Bundle 'vim-scripts/grep.vim'
  " non github repos
@@ -103,105 +104,23 @@ set wildmenu
 syntax on
 colorscheme mustang
 
-" neocomplete configuration
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
+let g:UltiSnipsExpandTrigger = '<C-j>'
+"let g:UltiSnipsJumpForwardTrigger
+"let g:UltiSnipsJumpBackwardTrigger
 
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
 
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#smart_close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-"Force omni patterns
-if !exists('g:neocomplete#force_omni_input_patterns')
-   let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#force_omni_input_patterns.c =
-         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp =
-         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.objc =
-         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.objcpp =
-         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-"let g:clang_use_library = 1
-
-" Enable jedi completion
-let g:pymode_rope_vim_completion = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#popup_on_dot = 0
-"let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
-let g:neocomplete#force_omni_input_patterns.ruby = '[^. \t]\.\h\w*\|\h\w*::|\w+'
-let g:neocomplete#sources#omni#input_patterns.python = '[^. \t]\.\w*'
-"let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-" end of neocomplete configuration
-autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
 
-let g:vimfiler_as_default_explorer = 1
 "let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
-let g:vimfiler_as_default_explorer = 1
+"let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
 "nmap ,b :Unite buffer<CR>
@@ -217,8 +136,7 @@ autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
 autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
 autocmd FileType cpp nmap <Leader>q :Make -f ~/dotfiles/vim/Makefile testQt<cr>
 autocmd FileType cpp nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType python nmap <Leader>R :Dispatch! python %<cr>
-autocmd FileType python nmap <Leader>D :!ipdb %<cr>
+"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
