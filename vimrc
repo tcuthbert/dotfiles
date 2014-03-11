@@ -104,7 +104,7 @@ set wildmenu
 syntax on
 colorscheme mustang
 
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:UltiSnipsExpandTrigger = '<C-j>'
 "let g:UltiSnipsJumpForwardTrigger
 "let g:UltiSnipsJumpBackwardTrigger
@@ -120,6 +120,8 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
+let g:pymode_virtualenv = 1
+let g:pymode_rope_completion = 0
 "let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
@@ -131,12 +133,15 @@ nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
 nmap <Leader>e :NERDTreeToggle<CR>
 
+"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
+autocmd FileType python setlocal makeprg=python\ %
+autocmd FileType python nmap <Leader>R :Make<cr>
+
 autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
 autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
 autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
 autocmd FileType cpp nmap <Leader>q :Make -f ~/dotfiles/vim/Makefile testQt<cr>
 autocmd FileType cpp nmap <Leader>R :Dispatch ./%:r<cr>
-"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
