@@ -105,10 +105,26 @@ set wildmenu
 syntax on
 colorscheme mustang
 
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
+
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:UltiSnipsExpandTrigger = '<C-j>'
-"let g:UltiSnipsJumpForwardTrigger
-"let g:UltiSnipsJumpBackwardTrigger
 
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
@@ -117,7 +133,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
 "autocmd FileType python nmap <Leader>D :!ipdb %<cr>
 autocmd FileType python setlocal makeprg=python\ %
-autocmd FileType python nmap <Leader>b :Make<cr>
+autocmd FileType python compiler python
+autocmd FileType python noremap <Leader>B :Make<cr>
 autocmd FileType python nmap <Leader>d :call VimuxRunCommand("!ipdb %")<CR>
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
