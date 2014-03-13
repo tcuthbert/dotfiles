@@ -37,6 +37,7 @@
  Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
+ Bundle 'godlygeek/tabular'
  Bundle 'Valloric/YouCompleteMe'
  "Bundle 'Rip-Rip/clang_complete'
  " Shougo plugins
@@ -114,35 +115,25 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
+"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
+autocmd FileType python setlocal makeprg=python\ %
+autocmd FileType python nmap <Leader>b :Make<cr>
+autocmd FileType python nmap <Leader>d :call VimuxRunCommand("!ipdb %")<CR>
 
-"let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
 let g:pymode_virtualenv = 1
 let g:pymode_rope_completion = 0
-"let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
-"nmap ,b :Unite buffer<CR>
 nmap ,b :CtrlPBuffer<CR>
-"nmap ,f :Unite file<CR>
-"nmap <Leader>s :VimShellPop<CR>
+nmap ,m :CtrlPMRUFiles<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
 nmap <Leader>e :NERDTreeToggle<CR>
 
-"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
-autocmd FileType python setlocal makeprg=python\ %
-autocmd FileType python nmap <Leader>R :Make<cr>
-
-autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
-autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
-autocmd FileType cpp nmap <Leader>q :Make -f ~/dotfiles/vim/Makefile testQt<cr>
-autocmd FileType cpp nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
 "call yankstack#setup()
