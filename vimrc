@@ -22,6 +22,7 @@
  Bundle 'joonty/vdebug'
  Bundle 'tpope/vim-speeddating'
  Bundle 'tpope/vim-surround'
+ Bundle 'tpope/vim-projectile'
  Bundle 'SirVer/ultisnips'
  Bundle 'klen/python-mode'
  Bundle 'scrooloose/nerdcommenter'
@@ -39,14 +40,7 @@
  Bundle 'tobyS/skeletons.vim'
  Bundle 'godlygeek/tabular'
  Bundle 'Valloric/YouCompleteMe'
- "Bundle 'Rip-Rip/clang_complete'
  " Shougo plugins
- "Bundle 'Shougo/vimproc'
- "Bundle 'Shougo/vimfiler.vim'
- "Bundle 'Shougo/unite.vim'
- "Bundle 'Shougo/unite-ssh'
- "Bundle 'Shougo/vimshell.vim'
- "Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
  Bundle 'vim-scripts/grep.vim'
  " non github repos
@@ -127,18 +121,20 @@ let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:UltiSnipsExpandTrigger = '<C-j>'
 
 
+noremap <Leader>B :Make<cr>
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
-"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
-autocmd FileType python setlocal makeprg=python\ %
+
 autocmd FileType python compiler python
-autocmd FileType python noremap <Leader>B :Make<cr>
-autocmd FileType python nmap <Leader>d :call VimuxRunCommand("!ipdb %")<CR>
+autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb %")<CR>
+autocmd FileType python nmap <Leader>r :write !python %<CR>
+autocmd FileType c setlocal makeprg=gcc\ %\ -o\ %:r\ -I.
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
+let g:pymode = 0
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
 let g:pymode_virtualenv = 1
