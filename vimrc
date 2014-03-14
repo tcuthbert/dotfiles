@@ -128,8 +128,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
 
 autocmd FileType python compiler python
-autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb %")<CR>
-autocmd FileType python nmap <Leader>r :write !python %<CR>
+autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
+autocmd FileType python nmap <Leader>r :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
 autocmd FileType c setlocal makeprg=gcc\ %\ -o\ %:r\ -I.
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
