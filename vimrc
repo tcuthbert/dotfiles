@@ -22,6 +22,7 @@
  Bundle 'joonty/vdebug'
  Bundle 'tpope/vim-speeddating'
  Bundle 'tpope/vim-surround'
+ Bundle 'tpope/vim-projectile'
  Bundle 'SirVer/ultisnips'
  Bundle 'klen/python-mode'
  Bundle 'scrooloose/nerdcommenter'
@@ -37,15 +38,9 @@
  Bundle 'joonty/vdebug'
  Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
+ Bundle 'godlygeek/tabular'
  Bundle 'Valloric/YouCompleteMe'
- "Bundle 'Rip-Rip/clang_complete'
  " Shougo plugins
- "Bundle 'Shougo/vimproc'
- "Bundle 'Shougo/vimfiler.vim'
- "Bundle 'Shougo/unite.vim'
- "Bundle 'Shougo/unite-ssh'
- "Bundle 'Shougo/vimshell.vim'
- "Bundle 'Shougo/neocomplete.vim'
  " vim-scripts repos
  Bundle 'vim-scripts/grep.vim'
  " non github repos
@@ -104,45 +99,54 @@ set wildmenu
 syntax on
 colorscheme mustang
 
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
+
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:UltiSnipsExpandTrigger = '<C-j>'
-"let g:UltiSnipsJumpForwardTrigger
-"let g:UltiSnipsJumpBackwardTrigger
 
 
+noremap <Leader>B :Make<cr>
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
 
-"let g:UltiSnipsExpandTrigger="<c-j>"
+autocmd FileType python compiler python
+autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
+autocmd FileType python nmap <Leader>r :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
+autocmd FileType c setlocal makeprg=gcc\ %\ -o\ %:r\ -I.
+
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
+let g:pymode = 0
 let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
 let g:pymode_virtualenv = 1
 let g:pymode_rope_completion = 0
-"let g:vimfiler_as_default_explorer = 1
 
 " Custom Key Mappings
-"nmap ,b :Unite buffer<CR>
 nmap ,b :CtrlPBuffer<CR>
-"nmap ,f :Unite file<CR>
-"nmap <Leader>s :VimShellPop<CR>
+nmap ,m :CtrlPMRUFiles<CR>
 nmap <Leader>n :bn<CR>
 nmap <Leader>p :bp<CR>
 nmap <Leader>e :NERDTreeToggle<CR>
 
-"autocmd FileType python nmap <Leader>D :!ipdb %<cr>
-autocmd FileType python setlocal makeprg=python\ %
-autocmd FileType python nmap <Leader>R :Make<cr>
-
-autocmd FileType c nmap <Leader>dc :Dispatch gcc -Wall -Werror % -o %:r<cr>
-autocmd FileType c nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType cpp nmap <Leader>b :Make -f ~/dotfiles/vim/Makefile testCpp OUT=%:r IN=%<cr>
-autocmd FileType cpp nmap <Leader>q :Make -f ~/dotfiles/vim/Makefile testQt<cr>
-autocmd FileType cpp nmap <Leader>R :Dispatch ./%:r<cr>
-autocmd FileType perl nmap <Leader>R :silent Dispatch perl %<cr>
 
 " Dirty Hacks
 "call yankstack#setup()
