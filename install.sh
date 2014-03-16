@@ -7,4 +7,5 @@ ln -s ~/dotfiles/zshenv ~/.zshenv
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle && \
 vim +BundleInstall +qall &&
+$HOME/dotfiles/vim/bundle/YouCompleteMe/install.sh --clang-completer
 echo "Vim plugins configured!!" || echo "Error setting up vim directory"
