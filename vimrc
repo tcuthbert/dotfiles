@@ -11,6 +11,7 @@
  " My Bundles here:
  "
  " original repos on github
+ Bundle 'jceb/vim-orgmode'
  Bundle 'kchmck/vim-coffee-script'
  Bundle 'benmills/vimux'
  Bundle 'rking/ag.vim'
