@@ -11,7 +11,8 @@
  " My Bundles here:
  "
  " original repos on github
- Bundle 'jceb/vim-orgmode'
+ Bundle 'xolox/vim-notes'
+ Bundle 'xolox/vim-misc'
  Bundle 'kchmck/vim-coffee-script'
  Bundle 'benmills/vimux'
  Bundle 'rking/ag.vim'
@@ -36,8 +37,7 @@
  Bundle 'thinca/vim-ref'
  Bundle 'majutsushi/tagbar'
  "Bundle 'ivanov/vim-ipython'
- Bundle 'joonty/vdebug'
- Bundle 'insanum/votl'
+ "Bundle 'insanum/votl'
  Bundle 'tobyS/skeletons.vim'
  Bundle 'godlygeek/tabular'
  Bundle 'Valloric/YouCompleteMe'
