@@ -18,6 +18,7 @@
  Bundle 'rking/ag.vim'
  Bundle 'kien/ctrlp.vim'
  Bundle 'vim-ruby/vim-ruby'
+ Bundle 'tpope/vim-rvm'
  Bundle 'tpope/vim-rails'
  Bundle 'tpope/vim-dispatch'
  "Bundle 'davidhalter/jedi-vim'
@@ -94,8 +95,6 @@ set foldmethod=syntax
 set foldlevelstart=1
 set t_Co=256
 set t_ut=
-set exrc            " enable per-directory .vimrc files
-set secure          " disable unsafe commands in local .vimrc files
 set wildmenu
 
 syntax on
