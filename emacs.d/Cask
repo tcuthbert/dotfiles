@@ -22,6 +22,7 @@
 (depends-on "highlight")
 (depends-on "idle-highlight")
 (depends-on "inf-ruby")
+(depends-on "company-inf-ruby")
 (depends-on "jedi")
 (depends-on "js2-mode")
 (depends-on "magit")

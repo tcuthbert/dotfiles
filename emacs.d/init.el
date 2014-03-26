@@ -6,6 +6,7 @@
 ;(load "01evil.el")
 (load "02company.el")
 (load "03python.el")
+(load "04ruby.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
