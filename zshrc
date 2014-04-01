@@ -23,4 +23,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias irssi="screen irssi"
 alias pacman="sudo pacman"
 alias tmux="tmux -2"
-export PATH="$HOME/.cask/bin:$PATH"
+export PATH="/home/tom/.cask/bin:$PATH"

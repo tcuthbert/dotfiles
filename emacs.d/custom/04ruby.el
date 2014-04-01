@@ -1,2 +1,6 @@
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-inf-ruby))
+;; Detect project RVM
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
+
+;; Robe mode
+(add-hook 'enh-ruby-mode-hook 'robe-mode)

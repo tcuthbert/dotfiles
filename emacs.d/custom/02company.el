@@ -6,3 +6,7 @@
 (add-hook 'python-mode-hook 
           'company-jedi-start
           (setq jedi:complete-on-dot t))
+
+;; Ruby completion
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-inf-ruby))
