@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/Code/ruby/rails/malignant_monster/" "~/Code/ruby/rails/sample_app/")
+("~/Code/ruby/rails/malignant_monster/" "~/dotfiles/" "~/Code/ruby/rails/sample_app/")
