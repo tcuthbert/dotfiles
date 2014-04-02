@@ -10,3 +10,6 @@
 ;; Ruby completion
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-inf-ruby))
+
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
