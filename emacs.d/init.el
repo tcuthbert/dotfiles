@@ -8,6 +8,8 @@
 (load "03python.el")
 (load "04ruby.el")
 (load "05web.el")
+(load "06projectile.el")
+(load "07helm.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
