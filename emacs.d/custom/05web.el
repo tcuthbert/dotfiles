@@ -8,5 +8,6 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
 ;; Scss-mode
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(autoload 'sass-mode "sass-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+(add-hook 'sass-mode-hook 'flymake-sass-load)
