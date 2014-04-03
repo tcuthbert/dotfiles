@@ -40,6 +40,8 @@
 (depends-on "rainbow-mode")
 (depends-on "recentf-ext")
 (depends-on "rubocop")
+(depends-on "rinari")
+(depends-on "prodigy")
 (depends-on "ruby-compilation")
 (depends-on "ruby-tools")
 (depends-on "s")
