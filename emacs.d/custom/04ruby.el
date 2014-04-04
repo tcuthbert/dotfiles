@@ -10,5 +10,11 @@
 ;;     (indent-according-to-mode)))
 
 
-;; Robe mode
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
+;; Ruby hooks
+(add-hook 'enh-ruby-mode-hook
+	  'robe-mode)
+(add-hook 'enh-ruby-mode-hook
+	  'rinari-minor-mode)
+(add-hook 'enh-ruby-mode-hook
+	  (lambda ()
+	    (robe-start "yes")))
