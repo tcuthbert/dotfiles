@@ -11,14 +11,10 @@
 
 
 ;; Ruby hooks
-(defun robe-start-yes ()
-  (interactive)
-  (robe-start "yes"))
-
 (add-hook 'enh-ruby-mode-hook
 	  'robe-mode)
 (add-hook 'enh-ruby-mode-hook
 	  'rinari-minor-mode)
 (add-hook 'enh-ruby-mode-hook
 	  (lambda ()
-	    (local-set-key (kbd "C-c r") 'robe-start-yes)))
+	    (local-set-key (kbd "C-c r") '(lambda () (interactive) (robe-start "yes")))))
