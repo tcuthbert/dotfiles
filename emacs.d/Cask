@@ -18,6 +18,8 @@
 (depends-on "findr")
 (depends-on "floobits")
 (depends-on "flymake-sass")
+(depends-on "ag")
+(depends-on "projectile")
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
 (depends-on "grizzl")
