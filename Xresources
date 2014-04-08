@@ -68,7 +68,7 @@ XTerm*color15:                          #FFFFFF
 URxvt*depth:                          32
 !URxvt*fading:                         20
 !URxvt*background:                     [20]grey15
-URxvt*background:                     [50]grey15
+URxvt*background:                     [80]grey15
 !
 URxvt*scrollBar:                       false
 !URxvt*scrollColor:                    grey13
@@ -87,12 +87,12 @@ URxvt*colorBD:                         orange
 !URxvt*transparent:                    true
 !URxvt*shading:                        33
 !URxvt*tintColor:                      turquoise
-URxvt.cutchars:                        ()*,&lt;&gt;[]{}|`&quot;&quot;''
+URxvt.cutchars:                        "`\"()'*<>[]{|}"
 !URxvt.tabbed.tabbar-fg:               6
 !URxvt.tabbed.tabbar-bg:               0
 !URxvt.tabbed.tab-fg:                  0
 !URxvt.tabbed.tab-bg:                  3
-URxvt*iso14755_52:			false
+URxvt*iso14755_52:			               false
 URxvt.perl-ext-common:                 matcher
 URxvt.urlLauncher:                     urlLauncher $0
 URxvt.keysym.C-Delete:                 perl:matcher:last
