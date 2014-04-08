@@ -1,0 +1,30 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/tom/.emacs.d/" . "custom/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/tom/.emacs.d/custom/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "00common-setup.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/tom/.emacs.d/custom/" (21314 26673 93365 249000) "06projectile.el" "05web.el" "../" "./" "02company.el" "07helm.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
+
+ ("/home/tom/.emacs.d/" (21314 26953 823460 991000) "projectile.cache" "ac-comphist.dat" "auto-save-list/" "projectile-bookmarks.eld" "custom/" "recentf" "../" "./" "jedi/" "session.10c8cf6289000139515453200000111370400" "install.sh" "Cask" "init.el" ".python-environments/" ".cask/")
+
+ ("/home/tom/" (21316 7645 757446 728000) "dotfiles/" ".linuxmint/" ".conky/" "Code/" ".zcompdump" ".vim_ref_cache/" ".perlbrew/" ".gstreamer-0.10/" ".gksu.lock" ".Xresources" ".xsession-errors" ".cache/" ".gorillarc" ".distlib/" ".vimshell/" "Videos/" ".synergy.conf" "Downloads/" ".recently-used" ".Xauthority" ".gnome2_private/" ".zshenv" ".python-eggs/" ".dbus/" ".pki/" ".sqlite_history" ".piey" "VirtualBox VMs/" ".emacs" ".adobe/" ".face.icon" ".selected_editor" ".vimfiler/" ".profile" ".vim-cpan-module-cache" ".speech-dispatcher/" ".tmux.conf" ".config/" ".xine/" ".pyenv/" "../" "./" ".pylint.d/" ".emacs.d/" ".mplayer/" ".copy/" "Share/" "Documents/" ".neocomplete/" ".grive" ".python/" ".pan2/" "Music/" ".pip/" ".kde/" "Pictures/" ".VirtualBox/" ".icons/" ".smb/" ".nzbget" ".ropeproject/" ".fonts/" "Mounts/" ".ssh/" ".cpan/" ".mono/" ".gnupg/" ".gconf/" ".gitconfig" ".histfile" ".gimp-2.8/" ".gnome2/" ".gtk-bookmarks" ".unite/" ".directory" ".lesshst" ".perl5/" ".dmrc" ".java/" ".macromedia/" ".viminfo" ".bashrc" "minicom.log" ".vimrc" ".ssr/" ".icedtea/" "Fiddler2/" ".thumbnails/" "lwict_soe4.mp4" "Projects/" "src/" ".vim/" ".cpanm/" "Desktop/" "opt/" ".gtkrc-2.0" ".cddb/" ".mozilla/" ".cask/" ".bash_logout" ".vim_bk/" ".zsh_history" ".local/" ".wireshark/" ".zprofile" ".gdfuse/")
+
+ ("/home/tom/Code/C/" (21315 64612 515375 159000) "example3.c" "poo.c" "simpleEncode.c" "split" "first.c" "outside.o" "static.c" "printf.c" "SimpleDemo" "foobar" "example1.s" "hack/" "simpleEncode" "test_struct.s" "printf" "showDanish.o" "first" "asciiBrot" "test_struct.c" "LeapYear.c" ".ycm_extra_conf.py" "malloc.c" "test.c" "streamy.c" "freqAnalysis.c" "asciiBrot.bk" "outside" "new.c" "func_pointer" "example3" "stack.c" "sort3" "cisco_qos_collect_v0.7.pl" "rot13.c~" "shellcodeasm.c" "LeapYear.o" "func_pointer.cpp" "inside.c" "TestingPointers.c" "testy" "get_line_example" "RAY.BMP" "dragon" "foobar.c" "../" "./" "stack.s" "TestingPointers" "LeapYear" "shellcode" "inside" "new.o" "stack" "rot13.c" "MovDemo.s" "danish" "theBox.c" "sort32" "boyermoore_horspool_memmem" "testy.o" "freqAnalysis" "encode.c" "boyermoore_horspool_memmem.c" "theBox" "testy.c" "streamy" "example1.c" "sort32.c" "dragon.c" "showDanish" "inside.o" ".ycm_extra_conf.pyc" "swap.c" "shell.c" "sort3.c" "string" "string.c" "a.out" "example4" "sort3.o" "stuff/" "doomsday.c" "scanf" "sort32.o" "get_line_example.c" "danish.c" "swap.asm" "first.o" "example4.c" "asciiBrot.c" "wondrous.c" "test" "test.o" "showDanish.c" "string.o" "blah" "test.py" "foobar.s" "malloc" "SimpleDemo.c" "sort3.c.ps" "split.c" "swap" "outside.c" "networks@netcacti" "swap.o" "static" "new")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
