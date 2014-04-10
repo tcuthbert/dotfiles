@@ -25,4 +25,6 @@
 (eval-after-load 'company
   '(progn
      (push 'company-clang company-backends)
-     (setq company-clang-arguments '("-I/usr/include" "-I/usr/include/x86_64-linux-gnu" "-I/usr/include/clang/3.2/include"))))
+     (setq company-clang-arguments '("-I/usr/include"
+				     "-I/usr/include/x86_64-linux-gnu"
+				     "-I/usr/include/clang/3.2/include"))))
