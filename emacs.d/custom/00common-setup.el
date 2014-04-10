@@ -1,6 +1,9 @@
 ;; Use cyberpunk theme
 (load-theme 'cyberpunk t)
 
+;; Disable startup screen
+(inhibit-startup-screen t)
+
 ;; Navigate between windows using Alt-1, Alt-2, Shift-left, shift-up, shift-right
 (windmove-default-keybindings)
 
