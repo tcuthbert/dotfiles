@@ -1,6 +1,6 @@
 (require 'grizzl)
 (projectile-global-mode)
-(setq projectile-enable-caching t)
+(setq projectile-require-project-root nil)
 (setq projectile-completion-system 'grizzl)
 ;; Press Command-p for fuzzy find in project
 (global-set-key (kbd "s-p") 'projectile-find-file)
