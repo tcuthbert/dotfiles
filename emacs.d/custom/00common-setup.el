@@ -19,6 +19,14 @@
 ;; Enable linenum
 (global-linum-mode t)
 
+;; Disable prompts
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq ido-create-new-buffer 'always)
+(setq confirm-nonexistent-file-or-buffer nil)
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+	    kill-buffer-query-functions))
+
 ;; Enable ido
 (require 'ido)
 (ido-mode t)
@@ -34,10 +42,6 @@
 
 (add-hook 'web-mode-hook
           (lambda () (flyspell-prog-mode)))
-
-;; Projectile
-(projectile-global-mode)
-(setq projectile-require-project-root nil)
 
 ;; Yasnippet
 (require 'yasnippet)
