@@ -43,6 +43,9 @@
 (add-hook 'web-mode-hook
           (lambda () (flyspell-prog-mode)))
 
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; Yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
