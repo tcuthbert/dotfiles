@@ -17,6 +17,7 @@ promptinit
 prompt walters
 #export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/usr/local/heroku/bin
 
+xrdb ~/.Xresources 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
