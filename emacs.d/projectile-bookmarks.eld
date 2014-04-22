@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/" "~/custom/" "~/Code/C++/" "~/Code/C/")
+("~/dotfiles/" "~/Code/Ruby/" "~/" "~/Code/" "~/Mounts/JumpBox/home/networks/src/NA/lwict_to_soev4_migration/" "~/Desktop/" "~/Code/C++/" "~/Code/C/")
