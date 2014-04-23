@@ -21,13 +21,14 @@
 
     t))
 (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
+
+;; Smartparens erb tags
 (defun my-erb-tags ()
   (when (and (stringp buffer-file-name)
 	     (string-match "\\.erb\\'" buffer-file-name))
     (sp-local-pair 'web-mode "%" "%")))
 
 (add-hook 'find-file-hook 'my-erb-tags)
-
 
 ;; Scss-mode
 (autoload 'scss-mode "scss-mode")
