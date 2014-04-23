@@ -14,18 +14,20 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "00common-setup.el"
+ "test.html.erb"
+ "04ruby.el"
  "02company.el"
  "09markdown.el"
- "00common-setup.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/tom/dotfiles/emacs.d/custom/" (21334 15352 453619 471000) "06projectile.el" "05web.el" "../" "./" ".#04ruby.el" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
+ ("/home/tom/dotfiles/emacs.d/custom/" (21334 33955 409561 992000) "06projectile.el" "05web.el" "../" "./" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
+
+ ("/home/tom/.emacs.d/custom/" (21334 29923 330009 864000) "06projectile.el" "05web.el" "../" "./" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
 
  ("/home/tom/Desktop/" (21325 973 538024 429000) "syncdrive_0.9-1-i386.deb" "Config-10.1.141.254-2440481.cfg" "c3560-ipbasek9-mz.122-55.SE9.bin" "RouterBuilder/" "C91750.html" "../" "virt_env/" "./" "C91750.md" "internal_user_import_template.csv" "NA/" ".directory" "c3750-ipbasek9-mz.122-55.SE9.bin" "c2960-lanbasek9-mz.150-2.SE5.bin" "backup_trunk.pl" "C85287.txt")
-
- ("/home/tom/.emacs.d/custom/" (21323 51400 954916 901000) "06projectile.el" "05web.el" "../" "./" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
 
  ("/home/tom/.emacs.d/" (21324 65473 555529 221000) "projectile.cache" "ac-comphist.dat" "auto-save-list/" "projectile-bookmarks.eld" "markdown.css" "custom/" "recentf" "../" "./" "jedi/" "session.10c8cf6289000139515453200000111370400" "ido.last" "install.sh" "tramp" "Cask" "init.el" ".python-environments/" ".cask/")
 
