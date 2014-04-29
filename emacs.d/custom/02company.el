@@ -10,10 +10,9 @@
 (global-set-key (kbd "TAB") 'indent-or-complete)
 
 ;; Python completion
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook 
-          'company-jedi-start
-          (setq jedi:complete-on-dot t))
+(eval-after-load 'company
+  '(progn
+     (push 'company-anaconda company-backends )))
 
 ;; Ruby completion
 (eval-after-load 'company
