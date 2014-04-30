@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/Code/Python/" "~/Code/Python/custom/" "/usr/share/emacs/24.3.50/etc/" "~/Documents/" "~/Code/Ruby/" "~/" "~/Code/" "~/Mounts/JumpBox/home/networks/src/NA/lwict_to_soev4_migration/" "~/Desktop/" "~/Code/C++/" "~/Code/C/")
+("~/dotfiles/" "~/Code/Ruby/rails/sample_app/" "~/Code/Python/" "~/Code/Python/custom/" "/usr/share/emacs/24.3.50/etc/" "~/Documents/" "~/Code/Ruby/" "~/" "~/Code/" "~/Mounts/JumpBox/home/networks/src/NA/lwict_to_soev4_migration/" "~/Desktop/" "~/Code/C++/" "~/Code/C/")
