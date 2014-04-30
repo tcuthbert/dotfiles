@@ -61,7 +61,6 @@
 (depends-on "python-environment")
 (depends-on "rainbow-mode")
 (depends-on "recentf-ext")
-(depends-on "rinari")
 (depends-on "robe")
 (depends-on "rubocop")
 (depends-on "ruby-compilation")
