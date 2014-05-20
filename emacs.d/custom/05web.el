@@ -23,10 +23,25 @@
 (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
 
 ;; Smartparens erb tags
+(defun space-and-space-on-each-side (&rest _ignored)
+  (save-excursion
+    (insert "  ")))
+
+(defun space-on-each-side (&rest _ignored)
+  (when (or (looking-back "=")
+	    (looking-back "#"))
+    (insert " ")
+    (save-excursion
+      (insert " "))))
+
 (defun my-erb-tags ()
   (when (and (stringp buffer-file-name)
 	     (string-match "\\.erb\\'" buffer-file-name))
-    (sp-local-pair 'web-mode "%" "%")))
+    (sp-local-pair 'web-mode "%" "%"
+                   :unless '(sp-in-string-or-word-p)
+                   :post-handlers '(
+                                    (space-and-space-on-each-side "SPC")
+                                    (space-on-each-side "=" "#")))))
 
 (add-hook 'find-file-hook 'my-erb-tags)
 
