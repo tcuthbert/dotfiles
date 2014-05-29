@@ -12,6 +12,7 @@
 (load "07helm.el")
 (load "08ace-jump.el")
 (load "09markdown.el")
+(load "10cc-mode.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
