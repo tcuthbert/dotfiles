@@ -11,6 +11,7 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/tom/dotfiles/emacs.d/"
  "/home/tom/dotfiles/emacs.d/custom/"
  "/home/tom/Code/Ruby/rails/sample_app/app/controllers/"
  "/home/tom/Code/Ruby/rails/sample_app/app/views/microposts/"
@@ -19,6 +20,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "init.el"
  "02company.el"
  "users_controller.rb"
  "_micropost.html.erb"
@@ -30,6 +32,10 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/tom/dotfiles/emacs.d/" (21383 12882 693021 417000) "projectile.cache" "auto-save-list/" "projectile-bookmarks.eld" "markdown.css" "custom/" "recentf" "../" "./" "jedi/" "session.10c8cf6289000139515453200000111370400" "ido.last" "install.sh" "tramp" "Cask" "init.el" ".python-environments/" ".cask/")
+
+ ("/home/tom/dotfiles/emacs.d/custom/" (21383 12944 986374 47000) "06projectile.el" "05web.el" "../" "10cc-mode.el" "./" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
+
  ("/home/tom/Code/Python/tools_sync/src/" (21355 25699 634167 24000) "tools_data_declarative.py" "sqlalchemy_declarative.pyc" "../" "./" "tools_data_declarative.pyc" "sqlalchemy_declarative.py" ".#sqlalchemy_declarative.py" "tools_data.db" "sql/" "sqlalchemy_example.db")
 
  ("/home/tom/.emacs.d/custom/" (21353 62031 981000 711000) "06projectile.el" "05web.el" "../" "./" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
@@ -38,8 +44,6 @@
 
  ("/home/tom/Code/Ruby/rails/sample_app/app/controllers/" (21351 36446 179350 595000) "application_controller.rb" "microposts_controller.rb" "../" "./" "static_pages_controller.rb" "concerns/" "sessions_controller.rb" "users_controller.rb")
 
- ("/home/tom/dotfiles/emacs.d/custom/" (21353 62031 981000 711000) "06projectile.el" "05web.el" "../" "./" "02company.el" "07helm.el" "09markdown.el" "01evil.el" "04ruby.el" "00common-setup.el" "08ace-jump.el" "03python.el")
-
  ("/home/tom/Documents/" (21354 21398 777737 272000) "CCIE_Service_Provider_Advanced_Technology_Class_v3.0/" "archbang-2014.01.08-x86_64.iso" "../" "DET NS PASSWORDS current.psafe3" "./" "DET NS PASSWORDS current.bak" "IMPLEMENTATION.html" "imp.md" "Answers/" "C92763.md" "IMPLEMENTATION.md")
 
  ("/home/tom/Code/Ruby/rails/sample_app/app/views/" (21344 47774 56032 844000) "sessions/" "static_pages/" "users/" "../" "./" "microposts/" "layouts/" "shared/")
@@ -47,8 +51,6 @@
  ("/home/tom/Code/Ruby/rails/sample_app/" (21344 49082 988454 858000) "spec/" "Guardfile" "Rakefile" "log/" "app/" ".git/" "Gemfile" "../" "config/" "./" "bin/" "Gemfile_bk" "Gemfile.lock" ".rspec" ".secret" "README.md" "tags" "localhost" "config.ru" ".rvmrc" "vendor/" "db/" "lib/" "public/" ".gitignore")
 
  ("/home/tom/Code/Ruby/rails/sample_app/app/" (21344 47774 56032 844000) "assets/" "mailers/" "helpers/" "../" "./" "controllers/" "models/" "views/")
-
- ("/home/tom/dotfiles/emacs.d/" (21343 54896 891655 876000) "projectile.cache" "ac-comphist.dat" "auto-save-list/" "projectile-bookmarks.eld" "markdown.css" "custom/" "recentf" "../" "./" "jedi/" "session.10c8cf6289000139515453200000111370400" "ido.last" "install.sh" "tramp" "*scratch*" "Cask" "init.el" ".python-environments/" ".cask/")
 
  ("/home/tom/Desktop/" (21325 973 538024 429000) "syncdrive_0.9-1-i386.deb" "Config-10.1.141.254-2440481.cfg" "c3560-ipbasek9-mz.122-55.SE9.bin" "RouterBuilder/" "C91750.html" "../" "virt_env/" "./" "C91750.md" "internal_user_import_template.csv" "NA/" ".directory" "c3750-ipbasek9-mz.122-55.SE9.bin" "c2960-lanbasek9-mz.150-2.SE5.bin" "backup_trunk.pl" "C85287.txt")
 

@@ -14,17 +14,17 @@ access-group $1 in interface `!p snip.rv = str(t[1])[:-3]`
 endsnippet
 
 snippet rmrk "Insert DOE Acl Remarks" i
-remark ### `date +"%d-%m-%y"` - $1 - 96209 - SR - $3
+remark ### `date +"%d-%m-%y"` - $1 - 96618 - SR - $3
 endsnippet
 
 snippet boris "Insert DOE Boris Acl" i
-access-list CORE-IN remark ### `date +"%d-%m-%y"` - $2 - 96209 - SR - $4
+access-list CORE-IN remark ### `date +"%d-%m-%y"` - $2 - 96618 - SR - $4
 access-list CORE-IN extended permit tcp host $5 any eq 3389
 access-list CORE-IN extended permit tcp host $5 any eq 139
 access-list CORE-IN extended permit tcp host $5 any eq 445
 access-list CORE-IN extended permit tcp host $5 any eq 1680
 !
-access-list SERVERFARM-IN remark ### `date +"%d-%m-%y"` - $2 - 96209 - SR - $4
+access-list SERVERFARM-IN remark ### `date +"%d-%m-%y"` - $2 - 96618 - SR - $4
 access-list SERVERFARM-IN extended permit tcp host $5 host 10.1.13.51 eq 1680
 endsnippet
 # vim:ft=snippets:
