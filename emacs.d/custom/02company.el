@@ -44,3 +44,6 @@
 
 (add-hook 'c-mode-hook 'my-c-completion-hook)
 (add-hook 'c++-mode-hook 'my-c++-completion-hook)
+
+;; Web mode completion
+(add-hook 'web-mode-hook 'robe-mode)
