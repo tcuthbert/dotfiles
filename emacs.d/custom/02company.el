@@ -2,17 +2,17 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Bind TAB to complete or indent
-(defun indent-or-complete ()
-  (interactive)
-  (if (looking-at "\\_>")
-      (company-complete-common)
-    (indent-according-to-mode)))
-(global-set-key (kbd "TAB") 'indent-or-complete)
+;; (defun indent-or-complete ()
+;;   (interactive)
+;;   (if (looking-at "\\_>")
+;;       (company-complete-common)
+;;     (indent-according-to-mode)))
+;; (global-set-key (kbd "TAB") 'indent-or-complete)
 
-;; Python completion
-(eval-after-load 'company
-  '(progn
-     (push 'company-anaconda company-backends )))
+;; ;; Python completion
+;; (eval-after-load 'company
+;;   '(progn
+;;      (push 'company-anaconda company-backends )))
 
 ;; Ruby completion
 (eval-after-load 'company
