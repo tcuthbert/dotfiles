@@ -7,6 +7,12 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+;; Css-mode
+(add-hook 'css-mode-hook
+	  (function (lambda ()
+		      (setq css-indent-offset 2)
+		      (setq indent-tabs-mode nil))))
+
 ;; Use smartparens
 ;(add-hook 'web-mode-hook #'(lambda () (smartparens-mode -1)))
 (defun my-web-mode-hook ()
@@ -22,17 +28,19 @@
     t))
 (sp-local-pair 'web-mode "<" nil :when '(sp-web-mode-is-code-context))
 
+;; Smartparens css braces
+(defun my-css-block (id action context)
+  (when (eq action 'insert)
+  (newline)
+  (newline)
+  (previous-line)
+  (indent-according-to-mode)))
+
 ;; Smartparens erb tags
 (defun space-and-space-on-each-side (&rest _ignored)
   (save-excursion
     (insert "  ")))
 
-(defun space-on-each-side (&rest _ignored)
-  (when (or (looking-back "=")
-	    (looking-back "#"))
-    (insert " ")
-    (save-excursion
-      (insert " "))))
 
 (defun my-erb-tags ()
   (when (and (stringp buffer-file-name)
@@ -44,6 +52,15 @@
                                     (space-on-each-side "=" "#")))))
 
 (add-hook 'find-file-hook 'my-erb-tags)
+
+(defun space-on-each-side (&rest _ignored)
+  (when (or (looking-back "=")
+	    (looking-back "#"))
+    (insert " ")
+    (save-excursion
+      (insert " "))))
+
+(sp-local-pair 'css-mode "{" nil :post-handlers '(:add my-css-block))
 
 ;; Scss-mode
 (autoload 'scss-mode "scss-mode")
