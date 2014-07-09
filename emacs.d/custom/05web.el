@@ -33,6 +33,7 @@
   (when (eq action 'insert)
   (newline)
   (newline)
+  (indent-according-to-mode)
   (previous-line)
   (indent-according-to-mode)))
 
