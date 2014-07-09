@@ -277,4 +277,8 @@ pre {
   pre code, pre tt {
     background-color: transparent;
     border: none; }
+
+.lineNumbers {
+  width: 50px;
+}
 </style>
