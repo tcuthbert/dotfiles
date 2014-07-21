@@ -1,3 +1,6 @@
+;; Disable smart parens for markdown
+(add-to-list 'sp-ignore-modes-list 'markdown-mode)
+
 ;; Pandoc-mode
 (add-hook 'markdown-mode-hook 'turn-on-pandoc)
 
