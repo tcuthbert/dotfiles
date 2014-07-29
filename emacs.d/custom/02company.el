@@ -9,10 +9,10 @@
 ;;     (indent-according-to-mode)))
 ;; (global-set-key (kbd "TAB") 'indent-or-complete)
 
-;; ;; Python completion
-;; (eval-after-load 'company
-;;   '(progn
-;;      (push 'company-anaconda company-backends )))
+;; Python completion
+(eval-after-load 'company
+  '(progn
+     (push 'company-anaconda company-backends )))
 
 ;; Ruby completion
 (eval-after-load 'company
