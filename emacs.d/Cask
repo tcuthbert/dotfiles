@@ -9,6 +9,7 @@
 (depends-on "auto-complete")
 (depends-on "calfw")
 (depends-on "cask")
+(depends-on "sr-speedbar")
 (depends-on "company")
 (depends-on "company-anaconda")
 (depends-on "company-inf-ruby")
