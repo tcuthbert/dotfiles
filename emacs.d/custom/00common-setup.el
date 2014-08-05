@@ -57,3 +57,16 @@
 (require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
+
+;; Terminal clipboard support with Parcellite
+(defun copy-from-linux ()
+  (shell-command-to-string "parcellite 2> /dev/null"))
+
+(defun paste-to-linux (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "parcellite" "-c 2>/dev/null" "parcellite")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+(setq interprogram-cut-function 'paste-to-linux)
+(setq interprogram-paste-function 'copy-from-linux)
