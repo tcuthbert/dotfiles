@@ -1,6 +1,9 @@
 ;; Enable global completion
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; Trigger key-binding
+(global-set-key (kbd "M-n") 'company-complete-common)
+
 ;; Bind TAB to complete or indent
 ;; (defun indent-or-complete ()
 ;;   (interactive)
