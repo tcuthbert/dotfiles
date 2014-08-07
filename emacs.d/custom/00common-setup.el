@@ -68,5 +68,8 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(setq interprogram-cut-function 'paste-to-linux)
-(setq interprogram-paste-function 'copy-from-linux)
+(if (getenv "DISPLAY")                                                                                                                
+    (progn
+      (setq interprogram-cut-function 'paste-to-linux)
+      (setq interprogram-paste-function 'copy-from-linux))
+  )
