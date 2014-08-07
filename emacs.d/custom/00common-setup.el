@@ -64,7 +64,7 @@
 
 (defun paste-to-linux (text &optional push)
   (let ((process-connection-type nil))
-    (let ((proc (start-process "parcellite" "-c 2>/dev/null" "parcellite")))
+    (let ((proc (start-process "parcellite" "parcellite" "parcellite" "-c")))
       (process-send-string proc text)
       (process-send-eof proc))))
 
