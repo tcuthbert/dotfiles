@@ -19,6 +19,10 @@
 ;; Enable linenum
 (global-linum-mode t)
 
+;; Disable toolbar and menu
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
 ;; Disable prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq ido-create-new-buffer 'always)
