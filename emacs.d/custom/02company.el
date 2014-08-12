@@ -23,6 +23,11 @@
      (push 'company-inf-ruby company-backends)
      (push 'company-robe company-backends)))
 
+;; Javascript completion
+(eval-after-load 'company
+  '(progn
+     (push 'company-tern company-backends)))
+
 ;; Not needed since company-clang.el update
 ;; C/C++ Clang completion
 ;; (defun my-c++-completion-hook ()
