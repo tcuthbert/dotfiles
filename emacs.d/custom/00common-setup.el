@@ -63,17 +63,17 @@
 (show-smartparens-global-mode t)
 
 ;; Terminal clipboard support with Parcellite
-(defun copy-from-linux ()
-  (shell-command-to-string "parcellite 2> /dev/null"))
+;; (defun copy-from-linux ()
+;;   (shell-command-to-string "parcellite 2> /dev/null"))
 
-(defun paste-to-linux (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "parcellite" "parcellite" "parcellite" "-c")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+;; (defun paste-to-linux (text &optional push)
+;;   (let ((process-connection-type nil))
+;;     (let ((proc (start-process "parcellite" "parcellite" "parcellite" "-c")))
+;;       (process-send-string proc text)
+;;       (process-send-eof proc))))
 
-(if (getenv "DISPLAY")                                                                                                                
-    (progn
-      (setq interprogram-cut-function 'paste-to-linux)
-      (setq interprogram-paste-function 'copy-from-linux))
-  )
+;; (if (getenv "DISPLAY")                                                                                                                
+;;     (progn
+;;       (setq interprogram-cut-function 'paste-to-linux)
+;;       (setq interprogram-paste-function 'copy-from-linux))
+;;   )
