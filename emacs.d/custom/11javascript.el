@@ -5,6 +5,7 @@
 
 ;; Smartparens braces
 (sp-local-pair 'js2-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "C-j")))
+(sp-local-pair 'js2-mode "[" nil :post-handlers '((my-create-newline-and-enter-sexp "C-j")))
 
 (defun my-create-newline-and-enter-sexp (&rest _ignored)
   "Open a new brace or bracket expression, with relevant newlines and indent. "
