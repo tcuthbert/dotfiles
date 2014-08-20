@@ -17,3 +17,8 @@
 ;; Anaconda mode
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'eldoc-mode)
+
+;; Prevent yasnippet indent
+(add-hook 'python-mode-hook
+	  '(lambda ()
+	     (set (make-local-variable 'yas-indent-line) 'fixed)))
