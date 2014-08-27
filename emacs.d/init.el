@@ -4,6 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 (load "00common-setup.el")
 ;(load "01evil.el")
+(load "02company.el")
 (load "03python.el")
 (load "04ruby.el")
 (load "05web.el")
@@ -13,7 +14,6 @@
 (load "09markdown.el")
 (load "10cc-mode.el")
 (load "11javascript.el")
-(load "99company.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
