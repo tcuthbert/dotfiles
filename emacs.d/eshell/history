@@ -1,7 +1,6 @@
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
 git branch
 git commit -am 'debug commit' && git push
 cd ../qos_config_compiler/
@@ -126,3 +125,4 @@ ll
 alias ll 'ls -hl --color=auto'
 ll
 alias ll 'ls -hl --color=auto'
+ll
