@@ -8,6 +8,7 @@
 (depends-on "anaconda-mode")
 (depends-on "auto-complete")
 (depends-on "calfw")
+(depends-on "puppet-mode")
 (depends-on "cask")
 (depends-on "company")
 (depends-on "company-anaconda")

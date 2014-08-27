@@ -14,6 +14,7 @@
 (load "09markdown.el")
 (load "10cc-mode.el")
 (load "11javascript.el")
+(load "12eshell.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
