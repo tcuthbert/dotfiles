@@ -1,0 +1,12 @@
+# name: shebang
+# key: #!
+# --
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# author    : Thomas Cuthbert
+# copyright : (c) `(insert (format-time-string "%Y"))` Kinetic IT
+import os, sys
+
+
+if __name__ == "__main__":
+    $0

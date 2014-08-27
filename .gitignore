@@ -1,6 +1,6 @@
 # Project Specific Ignores #
 ############################
-~/.emacs.d/.*
+emacs.d/.*
 
 
 # Compiled source #
