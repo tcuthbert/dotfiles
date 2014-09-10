@@ -1,63 +1,9 @@
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
-git branch
-git commit -am 'debug commit' && git push
-cd ../qos_config_compiler/
-ls 
-git status
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git status
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-ls 
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
@@ -72,57 +18,111 @@ git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
 git commit -am 'debug commit' && git push
 cd ..
-cd ..
-cd qos_config_compiler/
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+041d449..3d6b51b  testing -> testing
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+git commit -am 'threading' && git push
+cd ~/Code
+ll
+cd c
+ll
+mkdir zero_mq
+ll
+mv *.c zero_mq/
+ll
+cd zero_mq/
+ll
+git clone --depth=1 git://github.com/imatix/zguide.git
+git clone --depth=1 https://github.com/imatix/zguide.git
+ll
+rm *.c
+cd zguide/
+ll
+cd examples/
+ll
+cd C
+ll
 ls
-git commit -am 'debug commit' && push 
-git commit -am 'debug commit' && git push 
-git branch
-git commit -am 'debug commit' && git push testing
-git push
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-cd ../bandwidth_interrogator/
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-cd ../qos_config_compiler/
-git commit -am 'debug commit' && git push testing
-esh
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git add .
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
-git commit -am 'debug commit' && git push testing
+(find-file "./hwserver.c")
 ll
-alias ll command 'ls -hl --color=auto'
+cd ..
+find ./ -name 'zmq.h'
+cd ..
+find ./ -name 'zmq.h'
+find ./ -name '*zmq.h'
 ll
-alias ll 'ls -hl --color=auto'
+find ./ -name '*.h'
 ll
-alias ll 'ls -hl --color=auto'
+cd examples/
 ll
+cd C
+ll
+mkdir lib
+cd lib/
+wget http://download.zeromq.org/zeromq-4.0.4.tar.gz
+ll
+tar xvfz zeromq-4.0.4.tar.gz 
+ll
+cd zeromq-4.0.4/
+ll
+cd src/
+ll
+cd ..
+find ./ -name 'zmq.h'
+cd ..
+ll
+cd ..
+ll
+cd ..
+cd ..
+ll
+cd examples/
+ll
+cd C
+ll
+echo $C_INCLUDE_PATH
+ll
+cd lib/zeromq-4.0.4/include/
+pwd
+cd ..
+cd ..
+cd ..
+export C_INCLUDE_PATH='/home/tom/Code/c/zero_mq/zguide/examples/C/lib/zeromq-4.0.4/include'
+(find-file "./hwserver.c")
+clang -cc1 --help
+ll
+cd ..
+ll
+cd .packer/
+ll
+cd ../
+ll
+cd trusty64_cacti/
+ll
+ls -al
+cd ../.packer/
+ll
+cd ../
+ll
+cd trusty64_cacti/
+ll
+vagrant up
+vagrant up --no-provision
+vagrant reload

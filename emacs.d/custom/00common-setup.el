@@ -1,6 +1,9 @@
 ;; Use cyberpunk theme
 (load-theme 'cyberpunk t)
 
+;; Allow emacsclient to fullscreen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; Disable startup screen
 (setq inhibit-startup-screen t)
 
@@ -37,6 +40,12 @@
 
 ;; Ag
 (require 'ag)
+
+;; Recentf
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; Flyspell
 (require 'flyspell)

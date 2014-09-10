@@ -3,7 +3,7 @@
 (require 'pallet)
 (add-to-list 'load-path "~/.emacs.d/custom")
 (load "00common-setup.el")
-;(load "01evil.el")
+(load "01evil.el")
 (load "02company.el")
 (load "03python.el")
 (load "04ruby.el")

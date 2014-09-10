@@ -1,6 +1,6 @@
 # name : Fenced Code Block
-# key: ~ios
+# key: ~
 # --
-~~~~{.ios ${1:.numberLines}}
+~~~~{.$1 ${2:.numberLines}}
 $0
 ~~~~
