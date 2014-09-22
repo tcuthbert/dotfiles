@@ -1,0 +1,40 @@
+# ENV settings
+export TERM=xterm-256color
+export http_proxy='http://203.14.52.37:8080/'
+export https_proxy='http://203.14.52.37:8080/'
+export no_proxy="localhost,127.0.0.1"
+export PATH="/home/tom/.local/bin:/home/tom/.cask/bin:/home/tom/.cabal/bin/:$HOME/.pyenv/bin:$PATH"
+export EDITOR="vim"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Functions
+
+function session () {
+ session_log="$HOME/.ssh/session`shuf -i 100-999 -n 1`.log"
+ if [[ -e $session_log  ]] then
+   echo "log collision overwrite $session_log?\nY/N?" && read answer
+  if [[ $answer =~ "[nN]" ]] then
+    session; return
+  fi
+ fi
+ echo logging to $session_log
+ ssh jb | tee -ai $session_log
+ echo log_file saved to $session_log
+ session_log=""
+}
+
+# CMD Alias'
+
+alias backup_firewalls="ssh jb '../networks/scripts/backup_firewalls.exp'"
+alias emacsclient='emacsclient -c -a "" -F "((fullscreen . maximized))"'
+
+
+# Hax
+
+# Fixup zsh inside emacs shell mode
+if [ -n "$INSIDE_EMACS" ]; then
+  chpwd() { print -P "\033AnSiTc %d" }
+  print -P "\033AnSiTu %n"
+  print -P "\033AnSiTc %d"
+fi
