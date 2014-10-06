@@ -1,113 +1,3 @@
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-git commit -am 'debug commit' && git push
-cd ..
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-041d449..3d6b51b  testing -> testing
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-git commit -am 'threading' && git push
-cd ~/Code
-ll
-cd c
-ll
-mkdir zero_mq
-ll
-mv *.c zero_mq/
-ll
-cd zero_mq/
-ll
-git clone --depth=1 git://github.com/imatix/zguide.git
-git clone --depth=1 https://github.com/imatix/zguide.git
-ll
-rm *.c
-cd zguide/
-ll
-cd examples/
-ll
-cd C
-ll
-ls
-(find-file "./hwserver.c")
-ll
-cd ..
-find ./ -name 'zmq.h'
-cd ..
-find ./ -name 'zmq.h'
-find ./ -name '*zmq.h'
-ll
-find ./ -name '*.h'
-ll
-cd examples/
-ll
-cd C
-ll
-mkdir lib
-cd lib/
-wget http://download.zeromq.org/zeromq-4.0.4.tar.gz
-ll
-tar xvfz zeromq-4.0.4.tar.gz 
-ll
-cd zeromq-4.0.4/
-ll
-cd src/
-ll
-cd ..
-find ./ -name 'zmq.h'
-cd ..
-ll
-cd ..
-ll
-cd ..
-cd ..
-ll
-cd examples/
-ll
-cd C
-ll
-echo $C_INCLUDE_PATH
-ll
-cd lib/zeromq-4.0.4/include/
-pwd
-cd ..
-cd ..
-cd ..
-export C_INCLUDE_PATH='/home/tom/Code/c/zero_mq/zguide/examples/C/lib/zeromq-4.0.4/include'
-(find-file "./hwserver.c")
-clang -cc1 --help
-ll
 cd ..
 ll
 cd .packer/
@@ -126,3 +16,113 @@ ll
 vagrant up
 vagrant up --no-provision
 vagrant reload
+plsense
+ll
+rmdir 12perl.el/
+touch 12perl.el
+cd ..
+ll
+ll
+mv TAGS ../
+ll
+cp ../TAGS ./
+rm TAGS 
+ll
+cd Documents/Tom\ Cuthbert/
+ll
+cd DTWD/
+ll
+mkdir C112754
+rmdir C112754/
+cd ../
+cd PM1616/
+rmdir C112754/
+mkdir C112754/
+mkdir providers
+mv ./providers.py ./providers/
+mv ./providers/providers.py ./providers/snmp.py
+ll
+cp example.ini ../tests/test_example.ini
+rm ../tests/test_example.ini
+pwd
+cd ..
+cd ..
+ll
+ll
+ll
+cd ..
+ll
+mkdir tmp
+ll
+mv src/scratch.py ../tmp
+cd tmp/
+ll
+cd ..
+ll
+cd ..
+ll
+mv tmp ./netlib/tmp/9992.py
+ll
+puppet apply --noop init.pp 
+puppet apply --noop init.pp 
+puppet apply --noop init.pp 
+puppet apply --noop init.pp 
+puppet apply --noop init.pp 
+puppet apply --noop init.pp 
+puppet apply --noop init.pp 
+puppet apply --noop init.pp  --verbose
+facter
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose
+puppet apply --noop init.pp  --verbose --external-dir facts.d
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+puppet apply --noop init.pp  --verbose 
+ls
+pwd
+ll
+mkdir manifests
+mv init.pp manifests/
+puppet apply --noop tests/init.pp 
+puppet apply --noop tests/init.pp 
+puppet apply --noop tests/init.pp 
+puppet apply --noop tests/init.pp 
+puppet apply --noop tests/init.pp 
+ll
+puppet apply --noop tests/init.pp 

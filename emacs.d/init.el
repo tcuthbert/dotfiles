@@ -14,6 +14,8 @@
 (load "09markdown.el")
 (load "10cc-mode.el")
 (load "11javascript.el")
+;(load "12perl.el")
+(load "13puppet-mode.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -32,3 +34,5 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
