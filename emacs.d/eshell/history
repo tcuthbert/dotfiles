@@ -1,10 +1,3 @@
-cd ..
-ll
-cd .packer/
-ll
-cd ../
-ll
-cd trusty64_cacti/
 ll
 ls -al
 cd ../.packer/
@@ -126,3 +119,10 @@ puppet apply --noop tests/init.pp
 puppet apply --noop tests/init.pp 
 ll
 puppet apply --noop tests/init.pp 
+ll
+./select_server 
+gdb ./select_server 
+gdb ./select_server -i=mi
+gdb -=mi ./select_server
+gdb -='mi' ./select_server
+gdb -i ./select_server

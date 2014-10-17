@@ -22,6 +22,7 @@ function session () {
  ssh jb | tee -ai $session_log
  echo log_file saved to $session_log
  session_log=""
+ return 0
 }
 
 # CMD Alias'

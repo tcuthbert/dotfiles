@@ -1,66 +1,67 @@
- set nocompatible               " be iMproved
- filetype off                   " required!
+set nocompatible               " be iMproved
+filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 
- " My Bundles here:
- "
- " original repos on github
- Bundle 'xolox/vim-notes'
- Bundle 'xolox/vim-misc'
- Bundle 'kchmck/vim-coffee-script'
- Bundle 'benmills/vimux'
- Bundle 'rking/ag.vim'
- Bundle 'kien/ctrlp.vim'
- Bundle 'vim-ruby/vim-ruby'
- Bundle 'tpope/vim-rvm'
- Bundle 'tpope/vim-rails'
- Bundle 'tpope/vim-dispatch'
- "Bundle 'davidhalter/jedi-vim'
- "Bundle 'joonty/vdebug'
- Bundle 'tpope/vim-speeddating'
- Bundle 'tpope/vim-surround'
- Bundle 'tpope/vim-projectile'
- Bundle 'SirVer/ultisnips'
- Bundle 'klen/python-mode'
- Bundle 'scrooloose/nerdcommenter'
- Bundle 'scrooloose/nerdtree'
- Bundle 'scrooloose/syntastic'
- Bundle 'mbbill/undotree'
- Bundle 'flazz/vim-colorschemes'
- Bundle 'c9s/perlomni.vim'
- Bundle 'jiangmiao/auto-pairs'
- Bundle 'thinca/vim-ref'
- Bundle 'majutsushi/tagbar'
- "Bundle 'ivanov/vim-ipython'
- "Bundle 'insanum/votl'
- Bundle 'tobyS/skeletons.vim'
- Bundle 'godlygeek/tabular'
- Bundle 'Valloric/YouCompleteMe'
- " Shougo plugins
- " vim-scripts repos
- Bundle 'vim-scripts/grep.vim'
- " non github repos
+" My Bundles here:
+"
+" original repos on github
+Bundle 'xolox/vim-notes'
+Bundle 'xolox/vim-misc'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'benmills/vimux'
+Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-dispatch'
+Bundle 'rodjek/vim-puppet'
+"Bundle 'davidhalter/jedi-vim'
+"Bundle 'joonty/vdebug'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-projectile'
+Bundle 'SirVer/ultisnips'
+Bundle 'klen/python-mode'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'mbbill/undotree'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'c9s/perlomni.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'thinca/vim-ref'
+Bundle 'majutsushi/tagbar'
+"Bundle 'ivanov/vim-ipython'
+"Bundle 'insanum/votl'
+Bundle 'tobyS/skeletons.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'Valloric/YouCompleteMe'
+" Shougo plugins
+" vim-scripts repos
+Bundle 'vim-scripts/grep.vim'
+" non github repos
 
- " git repos on your local machine (ie. when working on your own plugin)
+" git repos on your local machine (ie. when working on your own plugin)
 
- " ...
+" ...
 
- filetype plugin indent on     " required!
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
 set wrap
 set linebreak

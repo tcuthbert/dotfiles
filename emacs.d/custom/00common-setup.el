@@ -89,3 +89,9 @@
 
 ;; Bind sr-speed-bar-toggle to F12
 (global-set-key (kbd "<f12>") 'sr-speedbar-toggle)
+
+;; Disable yas in term-mode
+(add-hook 'term-mode-hook (lambda()
+        (setq yas-dont-activate t)))
+(add-hook 'multi-term-mode-hook (lambda()
+        (setq yas-dont-activate t)))
