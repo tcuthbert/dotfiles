@@ -1,7 +1,7 @@
 # ENV settings
 export TERM=xterm-256color
-export http_proxy='http://203.14.52.37:8080/'
-export https_proxy='http://203.14.52.37:8080/'
+export http_proxy='localhost:3128'
+export https_proxy=$http_proxy
 export no_proxy="localhost,127.0.0.1"
 export PATH="/home/tom/.local/bin:/home/tom/.cask/bin:/home/tom/.cabal/bin/:$HOME/.pyenv/bin:$PATH"
 export EDITOR="vim"

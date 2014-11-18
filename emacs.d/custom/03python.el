@@ -1,3 +1,6 @@
+;; Flycheck
+(add-hook 'python-mode-hook 'flycheck-mode)
+
 ;; Bind Keys
 (global-set-key (kbd "<f5>") 'compile)
 

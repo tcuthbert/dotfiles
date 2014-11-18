@@ -41,6 +41,9 @@
 ;; Ag
 (require 'ag)
 
+;; Emacs-helm
+(global-set-key (kbd "C-c a") 'helm-do-ag)
+
 ;; Recentf
 (require 'recentf)
 (recentf-mode 1)
@@ -95,3 +98,7 @@
         (setq yas-dont-activate t)))
 (add-hook 'multi-term-mode-hook (lambda()
         (setq yas-dont-activate t)))
+
+;; Emacs Powerline
+(require 'powerline)
+(powerline-default-theme)

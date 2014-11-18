@@ -288,16 +288,15 @@ pre code, pre tt {
   background-color: transparent;
   border: none;
 }
-/* pre { */
-/*   width */
-/*   word-wrap: break-word; */
-/*   white-space: pre-wrap; */
-/*   border: 1px solid #cccccc; */
-/*   font-size: 13px; */
-/*   line-height: 19px; */
-/*   overflow: auto; */
-/*   padding: 6px 10px; */
-/*   border-radius: 3px; } */
+pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
 
 
 
