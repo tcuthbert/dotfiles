@@ -2,6 +2,7 @@
 (source marmalade)
 (source melpa)
 
+(depends-on "puppet-mode")
 (depends-on "ace-jump-mode")
 (depends-on "adaptive-wrap")
 (depends-on "helm-ag")
@@ -72,7 +73,6 @@
 (depends-on "project-explorer")
 (depends-on "projectile")
 (depends-on "projectile-rails")
-(depends-on "puppet-mode")
 (depends-on "pyenv-mode")
 (depends-on "python-environment")
 (depends-on "rainbow-mode")
