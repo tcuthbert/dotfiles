@@ -1,68 +1,69 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'xolox/vim-notes'
-Bundle 'xolox/vim-misc'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'benmills/vimux'
-Bundle 'rking/ag.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rvm'
-Bundle 'markcornick/vim-vagrant'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-dispatch'
-Bundle 'rodjek/vim-puppet'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'benmills/vimux'
+Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rvm'
+Plugin 'markcornick/vim-vagrant'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-dispatch'
+Plugin 'rodjek/vim-puppet'
 "Bundle 'davidhalter/jedi-vim'
 "Bundle 'joonty/vdebug'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-projectile'
-Bundle 'SirVer/ultisnips'
-Bundle 'klen/python-mode'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'mbbill/undotree'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'c9s/perlomni.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'thinca/vim-ref'
-Bundle 'majutsushi/tagbar'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-projectile'
+Plugin 'SirVer/ultisnips'
+Plugin 'klen/python-mode'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'mbbill/undotree'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'c9s/perlomni.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'thinca/vim-ref'
+Plugin 'majutsushi/tagbar'
 "Bundle 'ivanov/vim-ipython'
 "Bundle 'insanum/votl'
-Bundle 'tobyS/skeletons.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'tobyS/skeletons.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'Valloric/YouCompleteMe'
 " Shougo plugins
 " vim-scripts repos
-Bundle 'vim-scripts/grep.vim'
-" non github repos
+Plugin 'vim-scripts/grep.vim'
 
-" git repos on your local machine (ie. when working on your own plugin)
-
-" ...
-
-filetype plugin indent on     " required!
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" Put your non-Plugin stuff after this line
 
 set wrap
 set linebreak

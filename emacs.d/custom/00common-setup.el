@@ -102,3 +102,6 @@
 ;; Emacs Powerline
 (require 'powerline)
 (powerline-default-theme)
+
+;; make indentation commands use space only (never tab character)
+(setq-default indent-tabs-mode nil) ; emacs 23.1, 24.2, default to t

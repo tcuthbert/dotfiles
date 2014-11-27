@@ -2,6 +2,8 @@
 ############################
 emacs.d/*
 emacs.d/.*
+vim/bundle/.*
+vim/bundle/*
 
 
 # Compiled source #
