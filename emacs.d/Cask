@@ -2,6 +2,9 @@
 (source marmalade)
 (source melpa)
 
+(depends-on "cmake-mode")
+(depends-on "cpputils-cmake")
+(depends-on "pony-mode")
 (depends-on "puppet-mode")
 (depends-on "ace-jump-mode")
 (depends-on "adaptive-wrap")
@@ -88,7 +91,6 @@
 (depends-on "shut-up")
 (depends-on "simple-httpd")
 (depends-on "skewer-mode")
-(depends-on "smartparens")
 (depends-on "sr-speedbar")
 (depends-on "tabbar")
 (depends-on "tern")

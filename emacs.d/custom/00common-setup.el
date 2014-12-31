@@ -69,10 +69,14 @@
 	     '"~/.emacs.d/snippets")
 
 ;; Smartparens
-(require 'smartparens-config)
-(require 'smartparens-ruby)
-(smartparens-global-mode)
-(show-smartparens-global-mode t)
+;; (require 'smartparens-config)
+;; (require 'smartparens-ruby)
+;; (smartparens-global-mode)
+;; (show-smartparens-global-mode t)
+
+;; Electric Pair
+(electric-pair-mode 1)
+(setq electric-pair-open-newline-between-pairs t)
 
 ;; Terminal clipboard support with Parcellite
 ;; (defun copy-from-linux ()
@@ -105,3 +109,8 @@
 
 ;; make indentation commands use space only (never tab character)
 (setq-default indent-tabs-mode nil) ; emacs 23.1, 24.2, default to t
+
+;; Zap up to char
+(autoload 'zap-up-to-char "misc"
+  "Kill up to, but not including ARGth occurrence of CHAR.")
+(global-set-key (kbd "M-Z") 'zap-up-to-char)
