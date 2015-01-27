@@ -77,6 +77,7 @@
 ;; Electric Pair
 (electric-pair-mode 1)
 (setq electric-pair-open-newline-between-pairs t)
+(show-paren-mode t)
 
 ;; Terminal clipboard support with Parcellite
 ;; (defun copy-from-linux ()
@@ -114,3 +115,8 @@
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR.")
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
+
+;; Yafolding
+(add-hook 'prog-mode-hook
+          (lambda () (yafolding-mode)))
+

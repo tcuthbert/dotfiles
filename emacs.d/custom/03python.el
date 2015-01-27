@@ -29,6 +29,11 @@
 ;; Pyenv mode
 (add-hook 'python-mode-hook 'pyenv-mode)
 
+;; Stop colon auto-indenting
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (setq electric-indent-chars (delq ?: electric-indent-chars))))
+
 ;; Smart parens settings
 ;; (sp-local-pair 'python-mode "[" nil :post-handlers '((my-create-newline-and-enter-sexp "C-j")))
 
@@ -38,3 +43,35 @@
 ;;   (indent-according-to-mode)
 ;;   (forward-line -1)
 ;;   (indent-according-to-mode))
+
+;; Execute file
+;; (fmakunbound 'python-shell-get-or-create-process)
+;; (defun python-shell-get-or-create-process ()
+;;   "Get or create an inferior Python process for current buffer and return it."
+;;   (let* ((dedicated-proc-name (python-shell-get-process-name t))
+;;          (dedicated-proc-buffer-name (format "*%s*" dedicated-proc-name))
+;;          (global-proc-name  (python-shell-get-process-name nil))
+;;          (global-proc-buffer-name (format "*%s*" global-proc-name))
+;;          (dedicated-running (comint-check-proc dedicated-proc-buffer-name))
+;;          (global-running (comint-check-proc global-proc-buffer-name))
+;;          (current-prefix-arg 4))
+;;     (when (and (not dedicated-running) (not global-running))
+;;       (if (call-interactively 'run-python)
+;;           (setq dedicated-running t)
+;;         (setq global-running t)))
+;;     ;; Always prefer dedicated
+;;     (get-buffer-process (if dedicated-running
+;;                             dedicated-proc-buffer-name
+;;                           global-proc-buffer-name))))
+(defun execute-file-interpreter ()
+  (defvar infproc (concat "*Python[" (buffer-file-name) "]*"))
+  ;; (if (get-buffer infproc)
+  ;;     (kill-buffer infproc))
+  (interactive)
+  (python-shell-send-file (buffer-file-name))
+  (python-shell-switch-to-shell))
+
+;; (add-hook 'python-mode-hook
+;;       (lambda ()
+;;         (local-unset-key (kbd "C-c C-l"))))
+;; (global-set-key (kbd "C-c C-l") 'execute-file-interpreter)

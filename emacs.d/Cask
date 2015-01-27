@@ -3,6 +3,8 @@
 (source melpa)
 
 (depends-on "cmake-mode")
+(depends-on "sphinx-doc")
+(depends-on "yafolding")
 (depends-on "cpputils-cmake")
 (depends-on "pony-mode")
 (depends-on "puppet-mode")
