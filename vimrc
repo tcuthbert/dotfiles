@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 " original repos on github
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
 Plugin 'benmills/vimux'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
@@ -128,11 +128,12 @@ let g:UltiSnipsExpandTrigger = '<C-j>'
 
 
 noremap <Leader>B :Make<cr>
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 0 
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
-autocmd FileType python compiler python
+"autocmd FileType python compiler python
 autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
 autocmd FileType python nmap <Leader>r :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
 autocmd FileType c let b:dispatch = "gcc -Wall -Werror % -o%:r -I."

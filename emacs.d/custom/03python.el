@@ -75,3 +75,8 @@
 ;;       (lambda ()
 ;;         (local-unset-key (kbd "C-c C-l"))))
 ;; (global-set-key (kbd "C-c C-l") 'execute-file-interpreter)
+
+;; Sphinx
+(add-hook 'python-mode-hook (lambda ()
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))

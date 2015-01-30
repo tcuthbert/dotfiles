@@ -3,6 +3,7 @@
 (source melpa)
 
 (depends-on "cmake-mode")
+(depends-on "readline-complete")
 (depends-on "sphinx-doc")
 (depends-on "yafolding")
 (depends-on "cpputils-cmake")

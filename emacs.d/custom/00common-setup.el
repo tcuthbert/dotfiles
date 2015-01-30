@@ -120,3 +120,9 @@
 (add-hook 'prog-mode-hook
           (lambda () (yafolding-mode)))
 
+;; Vagrant
+(eval-after-load 'tramp
+  '(vagrant-tramp-enable))
+
+;; Shell stuff
+(add-hook 'multi-term-mode-hook 'compilation-shell-minor-mode)
