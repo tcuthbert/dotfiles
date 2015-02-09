@@ -1,7 +1,7 @@
 (require 'grizzl)
 (projectile-global-mode)
 (setq projectile-require-project-root nil)
-(setq projectile-completion-system 'grizzl)
+(setq projectile-completion-system 'helm)
 (setq projectile-enable-caching t)
 (setq projectile-file-exists-remote-cache-expire nil)
 ;; Press Command-p for fuzzy find in project
