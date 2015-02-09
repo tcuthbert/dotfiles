@@ -35,6 +35,7 @@ alias emacsclient='emacsclient -c -a "" -F "((fullscreen . maximized))"'
 
 # Fixup zsh inside emacs shell mode
 if [ -n "$INSIDE_EMACS" ]; then
+  # This shell runs inside an Emacs *shell*/*term* buffer.
   chpwd() { print -P "\033AnSiTc %d" }
   print -P "\033AnSiTu %n"
   print -P "\033AnSiTc %d"

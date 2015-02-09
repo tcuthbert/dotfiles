@@ -2,6 +2,7 @@
 (source marmalade)
 (source melpa)
 
+(depends-on "aggressive-indent")
 (depends-on "cmake-mode")
 (depends-on "readline-complete")
 (depends-on "sphinx-doc")
