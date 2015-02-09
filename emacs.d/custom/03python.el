@@ -4,6 +4,12 @@
 ;; Bind Keys
 (global-set-key (kbd "<f5>") 'compile)
 
+;; Stop colon auto-indenting
+;(add-hook 'python-mode-hook
+          ;(lambda ()
+            ;(setq electric-indent-chars (delq ?: electric-indent-chars))))
+
+
 ;; Enable ipython interpreter
 (setq
  python-shell-interpreter "ipython2"
@@ -28,11 +34,6 @@
 
 ;; Pyenv mode
 (add-hook 'python-mode-hook 'pyenv-mode)
-
-;; Stop colon auto-indenting
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (setq electric-indent-chars (delq ?: electric-indent-chars))))
 
 ;; Smart parens settings
 ;; (sp-local-pair 'python-mode "[" nil :post-handlers '((my-create-newline-and-enter-sexp "C-j")))

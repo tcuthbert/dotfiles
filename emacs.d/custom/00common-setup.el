@@ -125,4 +125,6 @@
   '(vagrant-tramp-enable))
 
 ;; Shell stuff
-(add-hook 'multi-term-mode-hook 'compilation-shell-minor-mode)
+;; (add-hook 'multi-term-mode-hook 'compilation-shell-minor-mode)
+;; (add-hook 'term-mode-hook 'compilation-shell-minor-mode)
+;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
