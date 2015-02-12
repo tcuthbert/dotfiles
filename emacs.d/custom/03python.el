@@ -81,3 +81,9 @@
 (add-hook 'python-mode-hook (lambda ()
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
+
+;; Compliation shell on ponytests buffer
+(add-hook 'pony-minor-mode-hook (lambda ()
+                                  (add-hook 'comint-exec-hook (lambda ()
+                                     (interactive)
+                                     (compilation-shell-minor-mode t)))))

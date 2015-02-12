@@ -1,8 +1,5 @@
 # ENV settings
 export TERM=xterm-256color
-#export http_proxy='http://127.0.0.1:3128/'
-#export https_proxy=$http_proxy
-#export no_proxy="localhost,127.0.0.1"
 export PATH="$HOME/.emacs.d/vendor/tern/:$HOME/.local/bin:$HOME/.cask/bin:$HOME/.cabal/bin/:$PATH"
 export EDITOR="vim"
 #eval "$(pyenv init -)"
