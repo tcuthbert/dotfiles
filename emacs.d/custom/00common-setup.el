@@ -1,6 +1,9 @@
 ;; Use cyberpunk theme
 (load-theme 'cyberpunk t)
 
+;; Osx
+(setq mac-command-modifier 'meta)
+
 ;; Allow emacsclient to fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 

@@ -22,7 +22,6 @@ Plugin 'benmills/vimux'
 Plugin 'szw/vim-tags'
 Plugin 'pgilad/vim-skeletons'
 Plugin 'rking/ag.vim'
-Plugin 'cwood/vim-django'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-ruby/vim-ruby'
@@ -44,8 +43,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
-"Plugin 'Shougo/neosnippet.vim'
-"Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'honza/vim-snippets'
 "Plugin 'Shougo/neosnippet-snippets'
 "Plugin 'SirVer/ultisnips'
 Plugin 'mbbill/undotree'
@@ -110,9 +109,11 @@ set foldmethod=syntax
 set foldlevelstart=1
 set t_Co=256
 set t_ut=
-"set wildmenu
 set exrc
 set secure
+set macmeta
+
+"set wildmenu
 
 syntax enable
 colorscheme mustang
@@ -135,6 +136,13 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 "let g:ycm_server_keep_logfiles = '/tmp/ycm.log'
 "let g:UltiSnipsExpandTrigger = '<C-j>'
@@ -147,7 +155,6 @@ noremap <F5> :Make<cr>
 "autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 "autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
-autocmd FileType python compiler python
 "autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 "autocmd FileType python set errorformat=%f:%l:\ %m
 "autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
@@ -156,7 +163,8 @@ autocmd FileType python compiler python
 
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 let g:airline#extensions#tabline#enabled = 1
-let g:vim_tags_ctags_binary='/usr/local/bin/ctags'
+let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
+let g:vim_tags_use_vim_dispatch = 1
 "let g:UltiSnipsSnippetDirectories=['UltiSnips', 'CustomSnips']
 
 let g:pymode = 0
@@ -165,7 +173,7 @@ let g:pymode_breakpoint_key = "<Leader>pb"
 let g:pymode_virtualenv = 0
 let g:pymode_rope_completion = 0
 let g:django_projects = '~/Code/python' "Sets all projects under project
-let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
+let g:django_activate_virtualenv = 0 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 0 "Try to open nerdtree at the project root.
 "
 " Custom Key Mappings
@@ -193,7 +201,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -202,14 +210,36 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#disable_runtime_snippets={'_' : 1}
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
 " alternative pattern: '\h\w*\|[^. \t]\.\w*'
+autocmd FileType python compiler python
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
 au FileType python setlocal completeopt-=preview
 let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 1
