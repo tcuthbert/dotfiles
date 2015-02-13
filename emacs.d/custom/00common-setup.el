@@ -129,7 +129,7 @@
 ;; Vagrant
 (eval-after-load 'tramp
   '(vagrant-tramp-enable))
-(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+;; (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 
 ;; Shell stuff
 ;; (add-hook 'multi-term-mode-hook 'compilation-shell-minor-mode)

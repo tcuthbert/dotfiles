@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+
 filetype on                  " required
 filetype off                  " required
 
@@ -14,23 +15,29 @@ Plugin 'gmarik/Vundle.vim'
 " My Bundles here:
 "
 " original repos on github
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-notes'
+"Plugin 'xolox/vim-misc'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'benmills/vimux'
+Plugin 'szw/vim-tags'
+Plugin 'pgilad/vim-skeletons'
 Plugin 'rking/ag.vim'
+Plugin 'cwood/vim-django'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
+Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rvm'
 Plugin 'markcornick/vim-vagrant'
+Plugin 'lambdalisue/vim-pyenv'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-dispatch'
 Plugin 'rodjek/vim-puppet'
-"Bundle 'davidhalter/jedi-vim'
+Bundle 'davidhalter/jedi-vim'
 "Bundle 'joonty/vdebug'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-projectile'
+Plugin 'tpope/vim-projectionist'
 Plugin 'SirVer/ultisnips'
 Plugin 'klen/python-mode'
 Plugin 'scrooloose/nerdcommenter'
@@ -39,17 +46,20 @@ Plugin 'scrooloose/syntastic'
 Plugin 'mbbill/undotree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'c9s/perlomni.vim'
+Plugin 'mhinz/vim-tmuxify'
+Plugin 'wellle/tmux-complete.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'thinca/vim-ref'
 Plugin 'majutsushi/tagbar'
 "Bundle 'ivanov/vim-ipython'
 "Bundle 'insanum/votl'
-Plugin 'tobyS/skeletons.vim'
+"Plugin 'tobyS/skeletons.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'bling/vim-airline'
 " Shougo plugins
 " vim-scripts repos
-Plugin 'vim-scripts/grep.vim'
+"Plugin 'vim-scripts/grep.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -99,7 +109,9 @@ set foldmethod=syntax
 set foldlevelstart=1
 set t_Co=256
 set t_ut=
-set wildmenu
+"set wildmenu
+set exrc
+set secure
 
 syntax on
 colorscheme mustang
@@ -122,22 +134,26 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 "let g:ycm_server_keep_logfiles = '/tmp/ycm.log'
 let g:UltiSnipsExpandTrigger = '<C-j>'
 
 
-noremap <Leader>B :Make<cr>
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
+"noremap <Leader>B :Make<cr>
+noremap <F5> :Make<cr>
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+"autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
 "autocmd FileType python compiler python
-autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
-autocmd FileType python nmap <Leader>r :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
-autocmd FileType c let b:dispatch = "gcc -Wall -Werror % -o%:r -I."
+"autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
+"autocmd FileType python nmap <Leader>r :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
+"autocmd FileType c let b:dispatch = "gcc -Wall -Werror % -o%:r -I."
 
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:airline#extensions#tabline#enabled = 1
+let g:vim_tags_ctags_binary='/usr/local/bin/ctags'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "CustomSnips"]
 
 let g:pymode = 0
@@ -145,7 +161,10 @@ let g:pymode_run_key = "<Leader>pr"
 let g:pymode_breakpoint_key = "<Leader>pb"
 let g:pymode_virtualenv = 1
 let g:pymode_rope_completion = 0
-
+let g:django_projects = '~/Code/python' "Sets all projects under project
+let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
+let g:django_activate_nerdtree = 0 "Try to open nerdtree at the project root.
+"
 " Custom Key Mappings
 nmap ,b :CtrlPBuffer<CR>
 nmap ,m :CtrlPMRUFiles<CR>
