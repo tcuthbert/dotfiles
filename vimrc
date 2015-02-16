@@ -111,7 +111,6 @@ set t_Co=256
 set t_ut=
 set exrc
 set secure
-set macmeta
 
 "set wildmenu
 
