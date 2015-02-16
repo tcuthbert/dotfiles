@@ -138,3 +138,9 @@
 ;; (add-hook 'multi-term-mode-hook 'compilation-shell-minor-mode)
 ;; (add-hook 'term-mode-hook 'compilation-shell-minor-mode)
 ;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
+;; (setq explicit-shell-file-name "/bin/bash")
+;; (setq shell-file-name "bash")
+;; (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
+;; (setenv "SHELL" shell-file-name)
+;; (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
+
