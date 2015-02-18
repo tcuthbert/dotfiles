@@ -32,6 +32,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-dispatch'
 Plugin 'rodjek/vim-puppet'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'Rip-rip/clang_complete'
 "Bundle 'joonty/vdebug'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
@@ -43,10 +44,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet.vim'
+"Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
 "Plugin 'Shougo/neosnippet-snippets'
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 Plugin 'mbbill/undotree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'c9s/perlomni.vim'
@@ -244,3 +245,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "1"
+let g:pyenv#auto_activate = 0
+au FileType python silent PyenvActivate
+
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
