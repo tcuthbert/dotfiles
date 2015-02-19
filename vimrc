@@ -160,7 +160,7 @@ noremap <F5> :Make<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
 let g:vim_tags_use_vim_dispatch = 1
-"let g:UltiSnipsSnippetDirectories=['UltiSnips', 'CustomSnips']
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'CustomSnips']
 
 let g:pymode = 0
 let g:pymode_run_key = "<Leader>pr"
