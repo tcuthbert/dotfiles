@@ -235,6 +235,7 @@ autocmd FileType python compiler python
 autocmd FileType python setlocal omnifunc=jedi#completions
 au FileType python setlocal completeopt-=preview
 au FileType python silent PyenvActivate
+au FileType python silent set nosmartindent
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#use_tabs_not_buffers = 1
