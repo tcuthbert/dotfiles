@@ -1,5 +1,5 @@
 # ENV settings
-export TERM=xterm-256color
+#if [ -z "$TMUX" ]; then export TERM=screen-256color; fi
 export PATH="$HOME/.emacs.d/vendor/tern/:$HOME/.local/bin:$HOME/.cask/bin:$HOME/.cabal/bin/:$PATH"
 export EDITOR="vim"
 #eval "$(pyenv init -)"
@@ -26,6 +26,7 @@ function session () {
 
 alias backup_firewalls="ssh jb '../networks/scripts/backup_firewalls.exp'"
 alias emacsclient='emacsclient -c -a "" -F "((fullscreen . maximized))"'
+alias tmux="tmux -2"
 
 
 # Hax
