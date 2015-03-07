@@ -1,3 +1,12 @@
+# Fixup zsh inside emacs shell mode
+if [[ -n ${INSIDE_EMACS} ]]; then
+  # This shell runs inside an Emacs *shell*/*term* buffer.
+  export TERM=Eterm-color
+  chpwd() { print -P "\033AnSiTc %d" }
+  print -P "\033AnSiTu %n"
+  print -P "\033AnSiTc %d"
+fi
+
 # ENV settings
 #if [ -z "$TMUX" ]; then export TERM=screen-256color; fi
 export PATH="$HOME/.emacs.d/vendor/tern/:$HOME/.local/bin:$HOME/.cask/bin:$HOME/.cabal/bin/:$PATH"
@@ -30,11 +39,3 @@ alias tmux="tmux -2"
 
 
 # Hax
-
-# Fixup zsh inside emacs shell mode
-if [ -n "$INSIDE_EMACS" ]; then
-  # This shell runs inside an Emacs *shell*/*term* buffer.
-  chpwd() { print -P "\033AnSiTc %d" }
-  print -P "\033AnSiTu %n"
-  print -P "\033AnSiTc %d"
-fi

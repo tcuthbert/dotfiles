@@ -108,10 +108,19 @@
 (global-set-key (kbd "<f12>") 'sr-speedbar-toggle)
 
 ;; Disable yas in term-mode
+;; (add-hook 'term-mode-hook (lambda()
+;;         (setq yas-dont-activate t)))
+;; (add-hook 'multi-term-mode-hook (lambda()
+;;         (setq yas-dont-activate t)))
 (add-hook 'term-mode-hook (lambda()
-        (setq yas-dont-activate t)))
-(add-hook 'multi-term-mode-hook (lambda()
-        (setq yas-dont-activate t)))
+                            (setq-local yas-dont-activate t)))
+
+(add-hook 'term-mode-hook
+          (lambda ()
+            (define-key term-raw-map (kbd "C-y") 'term-paste)))
+
+;; Multi term
+(global-set-key (kbd "C-x t") 'helm-mt)
 
 ;; Emacs Powerline
 (require 'powerline)

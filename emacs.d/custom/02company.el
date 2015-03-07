@@ -13,9 +13,14 @@
 ;; (global-set-key (kbd "TAB") 'indent-or-complete)
 
 ;; Python completion
-(eval-after-load 'company
-  '(progn
-     (push 'company-anaconda company-backends )))
+(add-hook 'python-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   '((company-anaconda company-yasnippet)))))
+
+;; (eval-after-load 'company
+;;   '(progn
+;;      (push 'company-anaconda company-backends )))
 
 ;; Ruby completion
 (eval-after-load 'company

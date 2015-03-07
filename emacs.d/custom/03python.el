@@ -9,10 +9,9 @@
           ;(lambda ()
             ;(setq electric-indent-chars (delq ?: electric-indent-chars))))
 
-
 ;; Enable ipython interpreter
 (setq
- python-shell-interpreter "ipython2"
+ python-shell-interpreter "~/.pyenv/shims/ipython"
  python-shell-interpreter-args ""
  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
@@ -30,6 +29,7 @@
 ;; Prevent yasnippet indent
 (add-hook 'python-mode-hook
 	  '(lambda ()
+             (yas-minor-mode t)
 	     (set (make-local-variable 'yas-indent-line) 'fixed)))
 
 ;; Pyenv mode

@@ -22,7 +22,7 @@ Plugin 'benmills/vimux'
 Plugin 'szw/vim-tags'
 Plugin 'shime/vim-livedown'
 Plugin 'pgilad/vim-skeletons'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-ruby/vim-ruby'
@@ -54,7 +54,7 @@ Plugin 'mbbill/undotree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'c9s/perlomni.vim'
 Plugin 'mhinz/vim-tmuxify'
-Plugin 'wellle/tmux-complete.vim'
+"Plugin 'wellle/tmux-complete.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'thinca/vim-ref'
 Plugin 'majutsushi/tagbar'
@@ -144,6 +144,9 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 "let g:ycm_server_keep_logfiles = '/tmp/ycm.log'
 "let g:UltiSnipsExpandTrigger = '<C-j>'
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 "noremap <Leader>B :Make<cr>
 noremap <F5> :Make<cr>
