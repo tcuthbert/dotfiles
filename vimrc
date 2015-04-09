@@ -29,6 +29,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rvm'
 Plugin 'markcornick/vim-vagrant'
 Plugin 'lambdalisue/vim-pyenv'
+Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-dispatch'
 Plugin 'rodjek/vim-puppet'
@@ -45,6 +46,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'fatih/vim-go'
 Plugin 'Shougo/VimProc'
 "Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
@@ -114,6 +116,7 @@ set t_Co=256
 set t_ut=
 set exrc
 set secure
+set noshowmode
 
 "set wildmenu
 
@@ -230,22 +233,49 @@ endif
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neosnippet#disable_runtime_snippets={'_' : 1}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 " alternative pattern: '\h\w*\|[^. \t]\.\w*'
 autocmd FileType python compiler python
-autocmd FileType python setlocal omnifunc=jedi#completions
+"autocmd FileType python setlocal omnifunc=jedi#completions
 au FileType python setlocal completeopt-=preview
 au FileType python silent PyenvActivate
 au FileType python silent set nosmartindent
 let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
+"let g:jedi#auto_vim_configuration = 0
 let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#show_call_signatures = "2"
+let g:jedi#show_call_signatures = 2
 let g:pyenv#auto_activate = 0
 let g:ultisnips_python_style = "sphinx"
 
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.objc =
+      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.objcpp =
+      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
+let g:clang_default_keymappings = 0
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " Do Mac stuff here
+    let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+  endif
+endif

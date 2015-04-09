@@ -4,7 +4,7 @@ emacs.d/*
 emacs.d/.*
 vim/bundle/.*
 vim/bundle/*
-
+vim/.netrwhist
 
 # Compiled source #
 ###################
