@@ -19,12 +19,14 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'xolox/vim-misc'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'benmills/vimux'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'szw/vim-tags'
 Plugin 'shime/vim-livedown'
 Plugin 'pgilad/vim-skeletons'
 Plugin 'mileszs/ack.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
+Plugin 'othree/html5.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rvm'
 Plugin 'markcornick/vim-vagrant'
@@ -122,6 +124,8 @@ set noshowmode
 
 syntax enable
 colorscheme mustang
+
+let g:ansible_options = {'ignore_blank_lines': 0}
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
@@ -244,7 +248,7 @@ let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 " alternative pattern: '\h\w*\|[^. \t]\.\w*'
 autocmd FileType python compiler python
-"autocmd FileType python setlocal omnifunc=jedi#completions
+autocmd FileType python setlocal omnifunc=jedi#completions
 au FileType python setlocal completeopt-=preview
 au FileType python silent PyenvActivate
 au FileType python silent set nosmartindent
