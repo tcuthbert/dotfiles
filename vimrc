@@ -19,7 +19,11 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'xolox/vim-misc'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'benmills/vimux'
+"Plugin 'plasticboy/vim-markdown'
+Plugin 'gabrielelana/vim-markdown'
+"Plugin 'julienr/vimux-pyutils'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'gelguy/Cmd2.vim'
 Plugin 'szw/vim-tags'
 Plugin 'shime/vim-livedown'
 Plugin 'pgilad/vim-skeletons'
@@ -29,8 +33,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rvm'
+Plugin 'klen/python-mode'
 Plugin 'markcornick/vim-vagrant'
 Plugin 'lambdalisue/vim-pyenv'
+"Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-dispatch'
@@ -140,6 +146,16 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
+function! VimuxSlime()
+  call VimuxSendText(@v)
+  call VimuxSendKeys("Enter")
+endfunction
+
+" If text is selected, save it in the v buffer and send that buffer it to tmux
+vmap <LocalLeader>vs "vy :call VimuxSlime()<CR>
+
+" Select current paragraph and send it to tmux
+nmap <LocalLeader>vs vip<LocalLeader>vs<CR>
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
@@ -150,6 +166,9 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 "let g:ycm_server_keep_logfiles = '/tmp/ycm.log'
 "let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsExpandTrigger = '<C-j>'
+
+let g:markdown_enable_insert_mode_mappings = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -209,26 +228,39 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_python_flake8_exe = "~/.pyenv/shims/python -m flake8"
 
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
+
+let g:neocomplete#enable_cursor_hold_i = 1
+let g:neocomplete#cursor_hold_i_time = 1000 " in msec
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+let g:neocomplete#sources#buffer#cache_limit_size = 1000000
+let g:neocomplete#use_vimproc = 1
 
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " For snippet_complete marker.
 if has('conceal')
@@ -255,7 +287,7 @@ au FileType python silent set nosmartindent
 let g:jedi#completions_enabled = 0
 "let g:jedi#auto_vim_configuration = 0
 let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#show_call_signatures = 2
+let g:jedi#show_call_signatures = 0
 let g:pyenv#auto_activate = 0
 let g:ultisnips_python_style = "sphinx"
 
