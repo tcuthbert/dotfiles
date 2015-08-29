@@ -236,7 +236,7 @@ let g:syntastic_python_flake8_exe = "~/.pyenv/shims/python -m flake8"
 let g:acp_enableAtStartup = 0
 
 let g:neocomplete#enable_cursor_hold_i = 1
-let g:neocomplete#cursor_hold_i_time = 1000 " in msec
+let g:neocomplete#cursor_hold_i_time = 500 " in msec
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
