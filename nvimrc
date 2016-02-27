@@ -19,14 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'xolox/vim-misc'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'benmills/vimux'
-"Plugin 'plasticboy/vim-markdown'
-Plugin 'gabrielelana/vim-markdown'
-"Plugin 'julienr/vimux-pyutils'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'jpalardy/vim-slime'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'szw/vim-tags'
 Plugin 'shime/vim-livedown'
 Plugin 'pgilad/vim-skeletons'
@@ -36,19 +29,13 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rvm'
-Plugin 'klen/python-mode'
 Plugin 'markcornick/vim-vagrant'
-Plugin 'lambdalisue/vim-pyenv'
-"Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-rails'
-Plugin 'vim-scripts/a.vim'
-Plugin 'idanarye/vim-vebugger'
 Plugin 'tpope/vim-dispatch'
 Plugin 'rodjek/vim-puppet'
-Plugin 'janko-m/vim-test'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'Rip-rip/clang_complete'
+Bundle 'jmcantrell/vim-virtualenv'
 "Bundle 'joonty/vdebug'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
@@ -58,10 +45,9 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'fatih/vim-go'
-Plugin 'Shougo/VimProc'
 "Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
 "Plugin 'Shougo/neosnippet-snippets'
@@ -137,10 +123,6 @@ set noshowmode
 syntax enable
 colorscheme mustang
 
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-let g:slime_python_ipython = 1
-
 let g:ansible_options = {'ignore_blank_lines': 0}
 
 " Prompt for a command to run
@@ -156,16 +138,6 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
-function! VimuxSlime()
-  call VimuxSendText(@v)
-  call VimuxSendKeys("Enter")
-endfunction
-
-" If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <LocalLeader>vs "vy :call VimuxSlime()<CR>
-
-" Select current paragraph and send it to tmux
-nmap <LocalLeader>vs vip<LocalLeader>vs<CR>
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
@@ -176,14 +148,10 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 "let g:ycm_server_keep_logfiles = '/tmp/ycm.log'
 "let g:UltiSnipsExpandTrigger = '<C-j>'
-let g:UltiSnipsExpandTrigger = '<C-j>'
-
-let g:markdown_enable_insert_mode_mappings = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
 
 "noremap <Leader>B :Make<cr>
 noremap <F5> :Make<cr>
@@ -203,12 +171,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
 let g:vim_tags_use_vim_dispatch = 1
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'CustomSnips']
-
-let g:pymode = 0
-let g:pymode_run_key = "<Leader>pr"
-let g:pymode_breakpoint_key = "<Leader>pb"
-let g:pymode_virtualenv = 0
-let g:pymode_rope_completion = 0
 let g:django_projects = '~/Code/python' "Sets all projects under project
 let g:django_activate_virtualenv = 0 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 0 "Try to open nerdtree at the project root.
@@ -239,99 +201,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_python_flake8_exe = "~/.pyenv/shims/python -m flake8"
-
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_cursor_hold_i = 1
-let g:neocomplete#cursor_hold_i_time = 300 " in msec
-let g:neocomplete#enable_insert_char_pre = 0
-let g:neocomplcache_auto_completion_start_length=1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#sources#buffer#cache_limit_size = 1000000
-let g:neocomplete#use_vimproc = 1
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#disable_runtime_snippets={'_' : 1}
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 " alternative pattern: '\h\w*\|[^. \t]\.\w*'
 autocmd FileType python compiler python
 autocmd FileType python setlocal omnifunc=jedi#completions
 au FileType python setlocal completeopt-=preview
-au FileType python silent PyenvActivate
 au FileType python silent set nosmartindent
 let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
+"let g:jedi#auto_vim_configuration = 0
 let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#show_call_signatures = 0
-let g:pyenv#auto_activate = 0
+let g:jedi#show_call_signatures = 2
 let g:ultisnips_python_style = "sphinx"
-
-
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.c =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.objc =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
-let g:neocomplete#force_omni_input_patterns.objcpp =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-let g:clang_default_keymappings = 0
-
-if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin"
-    " Do Mac stuff here
-    let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-  endif
-endif
-
-let g:haskell_enable_quantification = 1
-let g:haskell_enable_recursivedo = 1
-let g:haskell_enable_arrowsyntax = 1
-let g:haskell_enable_pattern_synonyms = 1
-let g:haskell_enable_typeroles = 1
-let g:haskell_enable_static_pointers = 1
