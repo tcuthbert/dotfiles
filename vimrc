@@ -1,337 +1,255 @@
-set nocompatible              " be iMproved, required
+call plug#begin('~/.vim/plugged')
 
-filetype on                  " required
-filetype off                  " required
+" Defaults
+Plug 'tpope/vim-sensible'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Make sure you use single quotes
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
 
-" My Bundles here:
-"
-" original repos on github
-"Plugin 'xolox/vim-notes'
-"Plugin 'xolox/vim-misc'
-"Plugin 'kchmck/vim-coffee-script'
-Plugin 'benmills/vimux'
-"Plugin 'plasticboy/vim-markdown'
-Plugin 'gabrielelana/vim-markdown'
-"Plugin 'julienr/vimux-pyutils'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'jpalardy/vim-slime'
-Plugin 'szw/vim-tags'
-Plugin 'shime/vim-livedown'
-Plugin 'pgilad/vim-skeletons'
-Plugin 'mileszs/ack.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'kien/ctrlp.vim'
-Plugin 'othree/html5.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rvm'
-Plugin 'klen/python-mode'
-Plugin 'markcornick/vim-vagrant'
-Plugin 'lambdalisue/vim-pyenv'
-"Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-scripts/a.vim'
-Plugin 'idanarye/vim-vebugger'
-Plugin 'tpope/vim-dispatch'
-Plugin 'rodjek/vim-puppet'
-Plugin 'janko-m/vim-test'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'Rip-rip/clang_complete'
-"Bundle 'joonty/vdebug'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-projectionist'
-"Plugin 'klen/python-mode'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'fatih/vim-go'
-Plugin 'Shougo/VimProc'
-"Plugin 'Shougo/neosnippet.vim'
-Plugin 'honza/vim-snippets'
-"Plugin 'Shougo/neosnippet-snippets'
-Plugin 'SirVer/ultisnips'
-Plugin 'mbbill/undotree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'c9s/perlomni.vim'
-Plugin 'mhinz/vim-tmuxify'
-"Plugin 'wellle/tmux-complete.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'thinca/vim-ref'
-Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular'
-Plugin 'bling/vim-airline'
-" Shougo plugins
-" vim-scripts repos
-"Plugin 'vim-scripts/grep.vim'
+" Group dependencies, vim-snippets depends on ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-set wrap
-set linebreak
-set guioptions-=T " turn off toolbar
-set nowrap        " don't wrap lines
-set backspace=indent,eol,start
-set nocompatible
-set expandtab
-set shiftwidth=2  " number of spaces to use for autoindenting
-set tabstop=2     " a tab is four spaces
-set expandtab
-"set autoindent    " always set autoindenting on
-set smartindent    " always set smartindent on
-"set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch     " set show matching parenthesis
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
-set title                " change the terminal's title
-set visualbell           " don't beep
-set noerrorbells         " don't beep
-set nobackup
-set noswapfile
-set ofu=syntaxcomplete#Complete
-set foldmethod=syntax
-set foldlevelstart=1
-set t_Co=256
-set t_ut=
-set exrc
-set secure
-set noshowmode
+" Git
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-"set wildmenu
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-syntax enable
-colorscheme mustang
+" Auto Complete
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer' }
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'zchee/deoplete-jedi'
+"Plug 'tweekmonster/deoplete-jedi', {'branch': 'jedi-monkeypatch'}
+"Plug 'davidhalter/jedi-vim'
 
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-let g:slime_python_ipython = 1
+" HTML
+Plug 'othree/html5.vim'
 
-let g:ansible_options = {'ignore_blank_lines': 0}
+" TOML
+Plug 'cespare/vim-toml'
 
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
-" Inspect runner pane
-map <Leader>vi :VimuxInspectRunner<CR>
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>vq :VimuxCloseRunner<CR>
-" Interrupt any command running in the runner pane
-map <Leader>vx :VimuxInterruptRunner<CR>
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
-map <Leader>vz :call VimuxZoomRunner()<CR>
+" Documentation
+Plug 'Rykka/riv.vim'
 
-function! VimuxSlime()
-  call VimuxSendText(@v)
-  call VimuxSendKeys("Enter")
+" Go
+Plug 'fatih/vim-go'
+"Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+
+" Python
+"Plug 'bfredl/nvim-ipy'
+"Plug 'lambdalisue/vim-pyenv'
+Plug 'hynek/vim-python-pep8-indent'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" Ansible
+Plug 'pearofducks/ansible-vim'
+
+" UI
+Plug 'freeo/vim-kalisi'
+Plug 'bling/vim-airline'
+Plug 'sjl/badwolf'
+
+" REPL
+"Plug 'kassio/neoterm'
+"Plug 'hkupty/iron.nvim'
+Plug 'jpalardy/vim-slime'
+
+" Make
+"Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
+Plug 'skywind3000/asyncrun.vim'
+
+" Surrounds
+Plug 'tpope/vim-surround'
+
+" Grep
+Plug 'mhinz/vim-grepper'
+
+" Test
+Plug 'janko-m/vim-test'
+
+" Project
+Plug 'tpope/vim-projectionist'
+
+" Editing
+Plug 'scrooloose/nerdcommenter'
+Plug 'dhruvasagar/vim-table-mode'
+
+" Navigation
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'justinmk/vim-sneak'
+Plug 'majutsushi/tagbar'
+
+filetype plugin on
+
+" Markdown
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    !cargo build --release
+    UpdateRemotePlugins
+  endif
 endfunction
 
-" If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <LocalLeader>vs "vy :call VimuxSlime()<CR>
-
-" Select current paragraph and send it to tmux
-nmap <LocalLeader>vs vip<LocalLeader>vs<CR>
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
-"let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
-"let g:ycm_server_keep_logfiles = '/tmp/ycm.log'
-"let g:UltiSnipsExpandTrigger = '<C-j>'
-let g:UltiSnipsExpandTrigger = '<C-j>'
-
-let g:markdown_enable_insert_mode_mappings = 1
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+"Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer')  }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 
-"noremap <Leader>B :Make<cr>
-noremap <F5> :Make<cr>
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-"autocmd FileType ruby,eruby nmap <Leader>rs :call VimuxRunCommand("rails s")<CR>
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType python set errorformat=%f:%l:\ %m
-"autocmd FileType python nmap <Leader>d :call VimuxRunCommand("ipdb" . bufname("%"))<CR>
-"autocmd FileType python nmap <Leader>r :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
-"autocmd FileType c let b:dispatch = "gcc -Wall -Werror % -o%:r -I."
+" Add plugins to &runtimepath
+call plug#end()
 
-"let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
-let g:airline#extensions#tabline#enabled = 1
-let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
-let g:vim_tags_use_vim_dispatch = 1
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'CustomSnips']
+" Line Numbers
+set nu
 
-let g:pymode = 0
-let g:pymode_run_key = "<Leader>pr"
-let g:pymode_breakpoint_key = "<Leader>pb"
-let g:pymode_virtualenv = 0
-let g:pymode_rope_completion = 0
-let g:django_projects = '~/Code/python' "Sets all projects under project
-let g:django_activate_virtualenv = 0 "Try to activate the associated virtualenv
-let g:django_activate_nerdtree = 0 "Try to open nerdtree at the project root.
-"
-" Custom Key Mappings
-nmap ,b :CtrlPBuffer<CR>
-nmap ,m :CtrlPMRUFiles<CR>
-nmap <Leader>n :bn<CR>
-nmap <Leader>p :bp<CR>
-nmap <Leader>e :NERDTreeToggle<CR>
+" Theme
+colorscheme badwolf
+"set background=light
+" or 
+set background=dark
 
-
-" Dirty Hacks
-"call yankstack#setup()
-
-" Fix C++ indenting
-autocmd FileType cpp,c inoremap {      {}<Left>
-autocmd FileType cpp,c inoremap {<CR>  {<CR>}<Esc>O
-autocmd FileType cpp,c inoremap {{     {
-autocmd FileType cpp,c inoremap {}     {}
-
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_python_flake8_exe = "~/.pyenv/shims/python -m flake8"
-
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_cursor_hold_i = 1
-let g:neocomplete#cursor_hold_i_time = 300 " in msec
-let g:neocomplete#enable_insert_char_pre = 0
-let g:neocomplcache_auto_completion_start_length=1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#sources#buffer#cache_limit_size = 1000000
-let g:neocomplete#use_vimproc = 1
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#disable_runtime_snippets={'_' : 1}
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
-
-" alternative pattern: '\h\w*\|[^. \t]\.\w*'
-autocmd FileType python compiler python
-autocmd FileType python setlocal omnifunc=jedi#completions
-au FileType python setlocal completeopt-=preview
-au FileType python silent PyenvActivate
-au FileType python silent set nosmartindent
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#show_call_signatures = 0
-let g:pyenv#auto_activate = 0
-let g:ultisnips_python_style = "sphinx"
-
-
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.c =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.objc =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
-let g:neocomplete#force_omni_input_patterns.objcpp =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-let g:clang_default_keymappings = 0
-
-if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin"
-    " Do Mac stuff here
-    let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+" Fonts
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Source\ Code\ Pro\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
   endif
 endif
 
-let g:haskell_enable_quantification = 1
-let g:haskell_enable_recursivedo = 1
-let g:haskell_enable_arrowsyntax = 1
-let g:haskell_enable_pattern_synonyms = 1
-let g:haskell_enable_typeroles = 1
-let g:haskell_enable_static_pointers = 1
+" Vars
+let HOME = '$HOME'
+let s:uname = system("echo -n \"$(uname)\"")
+
+" if you don't set the background, the light theme will be used
+set t_Co=256
+
+" in case t_Co alone doesn't work, add this as well:
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
+" Sane defaults
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set noautoindent
+set guioptions -=m 
+set guioptions -=T
+
+" Auto Completion
+let g:ycm_rust_src_path = '/usr/local/src/rust/src'
+let g:ycm_server_python_interpreter = "/usr/bin/python"
+let g:ycm_python_binary_path = expand(HOME . "/.pyenv/shims/python")
+let g:UltiSnipsExpandTrigger = "<nop>"
+let g:ulti_expand_or_jump_res = 0
+function ExpandSnippetOrCarriageReturn()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<CR>"
+    endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+
+" Build
+"nnoremap <F5> :Neomake!<CR>
+" Write this in your vimrc file
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 1
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+" Python
+"autocmd! BufWritePost * Neomake
+"let g:neomake_charmbuild_maker = { 'exe': 'charm', 'args': ['build'] }
+"let g:neomake_charmproof_maker = { 'exe': 'charm', 'args': ['proof'] }
+"let g:neomake_python_flake8_make = {}
+"let g:neomake_python_enabled_makers = ['flake8']
+
+" Rust
+
+" Navigation
+
+" Symbol exploration
+nmap <F8> :TagbarToggle<CR>
+
+" Split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Ctrl P
+" Custom Key Mappings
+nmap ,b :CtrlPBuffer<CR>
+nmap ,m :CtrlPMRUFiles<CR>
+
+" REPL
+"let g:neoterm_position = 'horizontal'
+"let g:neoterm_automap_keys = ',tt'
+
+"nnoremap <silent> <f10> :TREPLSendFile<cr>
+"nnoremap <silent> <f9> :TREPLSendLine<cr>
+"vnoremap <silent> <f9> :TREPLSendSelection<cr>
+
+"" run set test lib
+"nnoremap <silent> ,rt :call neoterm#test#run('all')<cr>
+"nnoremap <silent> ,rf :call neoterm#test#run('file')<cr>
+"nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
+"nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
+
+let g:slime_python_ipython = 1
+let g:slime_target = "tmux"
+" tmux:
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
+" Tets
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+" Useful maps
+" hide/close terminal
+nnoremap <silent> ,to :Topen<cr>
+nnoremap <silent> ,th :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
+
+" Rails commands
+command! Troutes :T rake routes
+command! -nargs=+ Troute :T rake routes | grep <args>
+command! Tmigrate :T rake db:migrate
+
+" Git commands
+command! -nargs=+ Tg :T git <args>
+
+" Indenting
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType sh setlocal shiftwidth=4 tabstop=4
+
+
+" YAML
+autocmd FileType yaml set filetype=ansible
